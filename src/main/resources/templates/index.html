@@ -1,0 +1,71 @@
+
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head}">
+</head>
+<body>
+<div class="wrapper">
+    <!-- Navigation -->
+    <header th:replace="~{fragments/navigation}"></header>
+
+    <!-- Top Container -->
+    <section class="top-container">
+        <div class="showcase">
+            <h1>THE CHEF RESTAURANT</h1>
+            <p>"След една хубава вечеря, човек може да прости на всеки, дори на собствените си роднини."
+                Оскар Уайлд</p>
+            <th:block th:unless="${@loggedUser.id == null}">
+            <a href="/reservations/your" class="btn">Your Reservation</a>
+            <br></br>
+            </th:block>
+            <th:block th:if="${@loggedUser.id == null}">
+            <a href="https://thechef-club.com/%d0%bc%d0%b5%d0%bd%d1%8e/" class="btn">Look our Menu</a>
+            <br></br>
+            <a href="https://thechef-club.com/%d0%b2%d0%b8%d0%bd%d0%b5%d0%bd-%d0%bb%d0%b8%d1%81%d1%82/" class="btn">Look our Wine List</a>
+            </th:block>
+        </div>
+    </section>
+
+    <!-- Boxes Section -->
+    <section class="boxes">
+        <a href="/" class="main-btn" >
+            <div class="box">
+                <img src="/images/dinner.png" height="150px" alt="">
+                <h3>Individual reservation</h3>
+                <p>Just want to dinner with friends?</p>
+            </div>
+        </a>
+        <a href="/" class="main-btn" >
+            <div class="box">
+                <img src="/images/cocktail1.png" height="150px" alt="">
+                <h3>Cocktail</h3>
+                <p>Do you need a cocktail party?</p>
+            </div>
+        </a>
+        <a href="/" class="main-btn" >
+            <div class="box">
+                <img src="/images/celebration1.png" height="150px" alt="">
+                <h3>Celebration</h3>
+                <p>When you have an occasion to celebrate</p>
+            </div>
+        </a>
+    </section>
+
+
+    <!-- Portfolio -->
+    <section class="gallery">
+        <img src="/images/1.jpg" width="150px" height="250px" alt="">
+        <img src="/images/cocktail3.jpg" width="150px" height="250px" alt="">
+        <img src="/images/5.jpg" width="150px" height="250px" alt="">
+    </section>
+
+    <!-- <script th:src="@{/js/weather.js}"></script> -->
+</div>
+<!-- Wrapper Ends -->'
+
+<footer th:replace="~{fragments/footer}">
+</footer>
+</body>
+
+</html>

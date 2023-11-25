@@ -1,0 +1,40 @@
+Change: server port
+logging:
+    level:
+        blog: WARN
+        hibernate:
+            type:
+                descriptor: TRACE
+        org: WARN
+        org.hibernate.SQL: DEBUG
+server: port = 8080
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 123max123
+        url: jdbc:mysql://localhost:3306/the_chef_db?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+        username: root
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL8Dialect
+        defer-datasource-initialization: true
+        hibernate:
+            ddl-auto: create
+        open-in-view: false
+        properties:
+            hibernate:
+                format_sql: true
+    mvc:
+        hiddemethod:
+            filter:
+                enabled: true
+    resources:
+        cache: 'null'
+        period: 0
+    sql:
+        init:
+            mode: always
+    thymeleaf:
+        cache: false
+        encoding: UTF-8
+        mode: HTML
+        prefix: file:src/main/resources/templates/

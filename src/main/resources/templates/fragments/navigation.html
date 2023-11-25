@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="navigation">
+    <nav class="main-nav">
+        <ul>
+            <th:block th:if="${@loggedUser.id == null}">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <!--            <li th:unless="${@loggedUser.isLogged()}">-->
+                <a th:href="@{/users/login}">Login</a>
+                </li>
+                <!--            <li th:unless="${@loggedUser.isLogged()}">-->
+                <a th:href="@{/users/register}">Register</a>
+                </li>
+                <li>
+                    <a th:href="@{/about}">About</a>
+                </li>
+            </th:block>
+            <th:block th:unless="${@loggedUser.id == null}">
+                <li>
+                    <a th:href="@{/reservations/add}">Add new reservation</a>
+                </li>
+                <li>
+                    <a th:href="@{/users/profile/{id}(id = ${@loggedUser.id})}">Profile</a>
+                </li>
+                <li>
+                    <a href="/">Admin</a>
+                </li>
+                <!--            <li th:if="${@loggedUser.isLogged()}">-->
+                <!--                    <form th:action="@{users/logout}" method="POST">-->
+                <!--                        <input type="submit" value="LOGOUT"/>-->
+                <!--                    </form>-->
+                <a th:href="@{/users/logout}">Logout</a>
+                <!--            </li>-->
+                <li>
+                                    <th:block th:text = "${@loggedUser.username} == null ? 'no user' : 'Welcome, ' + ${@loggedUser.username}"></th:block>
+                </li>
+            </th:block>
+
+        </ul>
+    </nav>
+</header>
+
+</body>
+</html>
