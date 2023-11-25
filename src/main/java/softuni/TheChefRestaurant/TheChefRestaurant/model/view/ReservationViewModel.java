@@ -14,7 +14,7 @@ public class ReservationViewModel {
     private LocalDateTime dateTime;
     private Integer countPeople;
     private String specialRequest;
-    private Set<CategoryNameEnum> categories;
+//    private Set<CategoryNameEnum> categories;
 
 
     public ReservationViewModel() {
@@ -76,13 +76,13 @@ public class ReservationViewModel {
         this.specialRequest = specialRequest;
     }
 
-    public Set<CategoryNameEnum> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(Set<CategoryNameEnum> categories) {
-        this.categories = categories;
-    }
+//    public Set<CategoryNameEnum> getCategories() {
+//        return categories;
+//    }
+//
+//    public void setCategories(Set<CategoryNameEnum> categories) {
+//        this.categories = categories;
+//    }
 
 
 }

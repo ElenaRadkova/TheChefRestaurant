@@ -44,25 +44,29 @@
     <header th:replace="~{fragments/navigation}">
     </header>
 
-    <section  th:action="@{/reservations/your}" class="reservation-info">
+    <section th:object="${reservation}" th:action="@{/reservations/your}" class="reservation-info">
         <img src="/images/logo.jpg" alt="Title image">
-<!--        <div>-->
-<!--            <h2>Your Reservation</h2>-->
-<!--&lt;!&ndash;            <p>Thank you for your reservation</p>&ndash;&gt;-->
+        <div>
+            <h2>Your Reservation</h2>
+<!--            <p>Thank you for your reservation</p>-->
 
-<!--                <th:block th:text = "${@loggedUser.username} == null ? 'no user' : 'Thank you, ' + ${@yourReservation.dateTime} + ${@loggedUser.username}"></th:block>-->
+                <th:block th:text = "${@loggedUser.username} == null ? 'no user' : 'Thank you, '
+                + *{name} + ' for your reservation! You have confirm for table for '
+                + *{countPeople} + ' for ' + *{dateTime}
+                + '. Your special request is: '
+                + *{specialRequest}"></th:block>
 
-<!--        </div>-->
-        <div class="text-center mt-3">
-            <h5 class="mt-4 mb-0">Name of the reservation:</h5>
-            <span th:text="${@yourReservation.name}">UI/UX Designer</span>
-            <h5 class="mt-2 mb-0">Count of people:</h5>
-            <span th:text="${addReservationBindingModel.getCountPeople()}">UI/UX Designer</span>
-            <h5 class="mt-2 mb-0">Date and time</h5>
-            <span th:text="${addReservationBindingModel.dateTime}">UI/UX Designer</span>
-            <h5 class="mt-2 mb-0">Your special request is:</h5>
-            <span th:text="${addReservationBindingModel.specialRequest}">UI/UX Designer</span>
         </div>
+<!--        <div class="text-center mt-3">-->
+<!--            <h5 class="mt-4 mb-0">Name of the reservation:</h5>-->
+<!--            <span th:text="${@yourReservation.name}">UI/UX Designer</span>-->
+<!--            <h5 class="mt-2 mb-0">Count of people:</h5>-->
+<!--            <span th:text="${addReservationBindingModel.getCountPeople()}">UI/UX Designer</span>-->
+<!--            <h5 class="mt-2 mb-0">Date and time</h5>-->
+<!--            <span th:text="${addReservationBindingModel.dateTime}">UI/UX Designer</span>-->
+<!--            <h5 class="mt-2 mb-0">Your special request is:</h5>-->
+<!--            <span th:text="${addReservationBindingModel.specialRequest}">UI/UX Designer</span>-->
+<!--        </div>-->
 
     </section>
 </div>
