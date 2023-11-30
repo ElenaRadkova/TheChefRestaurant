@@ -43,8 +43,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserServiceModel findById(Long id) {
-        return userRepository.findById(id)
+    public UserServiceModel findById() {
+        return userRepository.findById(loggedUser.getId())
                               .map(userEntity -> modelMapper.map(userEntity, UserServiceModel.class))
                               .orElse(null);
 
@@ -56,8 +56,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity findByUserId(Long id) {
-        return userRepository.findById(id).orElse(null);
+    public UserEntity findByUserId() {
+        return userRepository.findById(loggedUser.getId()).orElse(null);
 
     }
 

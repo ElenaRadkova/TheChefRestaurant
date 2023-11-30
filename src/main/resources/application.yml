@@ -14,6 +14,10 @@ spring:
         password: 123max123
         url: jdbc:mysql://localhost:3306/the_chef_db?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
         username: root
+    servlet:
+      multipart:
+          max-file-size: 50MB
+          max-request-size: 50MB
     jpa:
         database-platform: org.hibernate.dialect.MySQL8Dialect
         defer-datasource-initialization: true

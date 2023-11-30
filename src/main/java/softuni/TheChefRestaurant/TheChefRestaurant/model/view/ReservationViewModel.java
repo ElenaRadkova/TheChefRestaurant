@@ -1,5 +1,6 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.model.view;
 
+import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.UserEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.CategoryNameEnum;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.SectionNameEnum;
 
@@ -14,6 +15,7 @@ public class ReservationViewModel {
     private LocalDateTime dateTime;
     private Integer countPeople;
     private String specialRequest;
+    private UserEntity author;
 //    private Set<CategoryNameEnum> categories;
 
 
@@ -83,6 +85,11 @@ public class ReservationViewModel {
 //    public void setCategories(Set<CategoryNameEnum> categories) {
 //        this.categories = categories;
 //    }
+    public UserEntity getAuthor() {
+        return author;
+    }
 
-
+    public void setAuthor(UserEntity author) {
+        this.author = author;
+    }
 }

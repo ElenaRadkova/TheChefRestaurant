@@ -12,10 +12,10 @@ public interface UserService {
 
     void logout();
 
- UserServiceModel findById(Long id);
+ UserServiceModel findById();
 
     boolean isUsernameExists(String username);
 
-    UserEntity findByUserId(Long id);
+    UserEntity findByUserId();
 
 }

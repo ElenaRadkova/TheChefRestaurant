@@ -8,4 +8,7 @@ public interface ReservationService {
     void addReservation(ReservationServiceModel reservationServiceModel);
 
     ReservationServiceModel findYourReservationView();
+
+    ReservationServiceModel findById();
+
 }

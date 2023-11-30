@@ -58,7 +58,7 @@ public class AddReservationBindingModel {
         this.dateTime = dateTime;
     }
 
-    @NumberFormat
+    @NumberFormat(pattern = "+359*********")
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -66,7 +66,7 @@ public class AddReservationBindingModel {
         this.phoneNumber = phoneNumber;
     }
 
-    @Size(min = 5)
+    @Size(min = 5, message = "Special request message must be between 5 and 35 characters!")
     public String getSpecialRequest() {
         return specialRequest;
     }
