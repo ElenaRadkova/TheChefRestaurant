@@ -16,7 +16,7 @@
         <section class="reservation-info text-center">
             <h2 th:text="'Thank you for your reservation,' + ${@loggedUser.username}"> </h2>
             <p>You have reservation of the name: <span th:text="${reservation.name}" id="name"></span></p>
-            <p>For: <span id="countPeople"></span> people</p>
+            <p>For: <span th:text="${reservation.countPeople}" id="countPeople"></span> people</p>
             <p>Date and time for your reservation is: <span id="dateTime"></span></p>
             <p>You prefer <span id="section">section</span></p>
             <p>For <span id="category">category of your reservation</span></p>
