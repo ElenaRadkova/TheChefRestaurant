@@ -1,34 +1,23 @@
-package softuni.TheChefRestaurant.TheChefRestaurant.model.service;
+package softuni.TheChefRestaurant.TheChefRestaurant.model.view;
 
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.Category;
-import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.UserEntity;
-import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.CategoryNameEnum;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.Picture;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.SectionNameEnum;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 
-public class ReservationServiceModel {
+public class YourReservationViewModel {
     private Long id;
     private String name;
-    private String phoneNumber;
     private SectionNameEnum section;
-    private UserEntity author;
     private LocalDateTime dateTime;
     private Integer countPeople;
     private String specialRequest;
-    private Set<CategoryNameEnum> categories;
+    private Set<Category> categories;
+    private Set<Picture> pictures;
 
-
-    public ReservationServiceModel() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public YourReservationViewModel() {
     }
 
     public String getName() {
@@ -39,27 +28,12 @@ public class ReservationServiceModel {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public SectionNameEnum getSection() {
         return section;
     }
 
     public void setSection(SectionNameEnum section) {
         this.section = section;
-    }
-
-    public UserEntity getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(UserEntity author) {
-        this.author = author;
     }
 
     public LocalDateTime getDateTime() {
@@ -86,10 +60,27 @@ public class ReservationServiceModel {
         this.specialRequest = specialRequest;
     }
 
-    public Set<CategoryNameEnum> getCategories() {
+    public Set<Category> getCategories() {
         return categories;
     }
-    public void setCategories(Set<CategoryNameEnum> categories) {
+
+    public void setCategories(Set<Category> categories) {
         this.categories = categories;
+    }
+
+    public Set<Picture> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(Set<Picture> pictures) {
+        this.pictures = pictures;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

@@ -1,0 +1,62 @@
+
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head}">
+</head>
+<body>
+<div class="wrapper">
+    <!-- Navigation -->
+    <header th:replace="~{fragments/navigation}">
+    </header>
+
+    <input type = "hidden" name="reservationId" id="reservationId" th:value="${reservation.id}">>
+    <div class = "your-main" th:object="${reservation}">
+        <!--/*@thymesVar id="reservations" type=""*/-->
+        <section class="reservation-info text-center">
+            <h2 th:text="'Thank you for your reservation,' + ${@loggedUser.username}"> </h2>
+            <p>You have reservation of the name: <span th:text="${reservation.name}" id="name"></span></p>
+            <p>For: <span id="countPeople"></span> people</p>
+            <p>Date and time for your reservation is: <span id="dateTime"></span></p>
+            <p>You prefer <span id="section">section</span></p>
+            <p>For <span id="category">category of your reservation</span></p>
+        </section>
+
+
+
+    </div>
+
+<!--    <section th:object="${reservation}" th:action="@{/reservations/your/{id}}" class="reservation-info">-->
+<!--        <img src="/images/logo.jpg" alt="Title image">-->
+<!--        <div>-->
+<!--            <h2>Your Reservation</h2>-->
+<!--&lt;!&ndash;            <p>Thank you for your reservation</p>&ndash;&gt;-->
+
+<!--                <th:block th:text = "${@loggedUser.username} == null ? 'no user' : 'Thank you, '-->
+<!--                + *{name} + ' for your reservation! You have confirm for table for '-->
+<!--                + *{countPeople} + ' for ' + *{dateTime}-->
+<!--                + '. Your special request is: '-->
+<!--                + *{specialRequest}"></th:block>-->
+<!--            <div class="buttons">-->
+<!--                <button th:action="@{/index}" class="btn btn-outline-primary px-4">Back</button>-->
+<!--                &lt;!&ndash;                            <button class="btn btn-primary px-4 ms-3">Contact</button>&ndash;&gt;-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        <div class="text-center mt-3">-->
+<!--            <h5 class="mt-4 mb-0">Name of the reservation:</h5>-->
+<!--            <span th:text="${@yourReservation.name}">UI/UX Designer</span>-->
+<!--            <h5 class="mt-2 mb-0">Count of people:</h5>-->
+<!--            <span th:text="${addReservationBindingModel.getCountPeople()}">UI/UX Designer</span>-->
+<!--            <h5 class="mt-2 mb-0">Date and time</h5>-->
+<!--            <span th:text="${addReservationBindingModel.dateTime}">UI/UX Designer</span>-->
+<!--            <h5 class="mt-2 mb-0">Your special request is:</h5>-->
+<!--            <span th:text="${addReservationBindingModel.specialRequest}">UI/UX Designer</span>-->
+<!--        </div>-->
+
+</div>
+<!-- Wrapper Ends -->
+</body>
+<footer th:replace="~{fragments/footer}">
+</footer>
+</html>

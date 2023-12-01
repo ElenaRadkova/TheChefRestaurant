@@ -10,13 +10,13 @@
     <header th:replace="~{fragments/navigation}"></header>
 
     <!-- Top Container -->
-    <section class="top-container">
-        <div class="showcase">
+    <section class="top-container" >
+        <div class="showcase" >
             <h1>THE CHEF RESTAURANT</h1>
             <p>"След една хубава вечеря, човек може да прости на всеки, дори на собствените си роднини."
                 Оскар Уайлд</p>
-            <th:block th:unless="${@loggedUser.id == null}">
-            <a href="/reservations/your" class="btn">Your Reservation</a>
+            <th:block th:unless="${@loggedUser.id == null}" >
+            <a th:action="@{/reservations/your/{id} (id= ${@reservationController.reservationServiceModel().id})}" class="btn">Your Reservation</a>
             <br></br>
             </th:block>
             <th:block th:if="${@loggedUser.id == null}">
@@ -59,8 +59,6 @@
         <img src="/images/cocktail3.jpg" width="150px" height="250px" alt="">
         <img src="/images/5.jpg" width="150px" height="250px" alt="">
     </section>
-
-    <!-- <script th:src="@{/js/weather.js}"></script> -->
 </div>
 <!-- Wrapper Ends -->'
 

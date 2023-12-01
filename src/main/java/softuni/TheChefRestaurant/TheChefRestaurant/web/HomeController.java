@@ -23,12 +23,12 @@ public class HomeController {
     @GetMapping("/")
     public String index(Model model){
         if (loggedUser.getId() == null) {
-            return "index";
+            return "home";
         }
 //        model.addAttribute("reservations", reservationService.findAllYourReservation());
         model.addAttribute("pictures", pictureService.findAllUrls());
 
-        return "index";
+        return "home";
     }
     @GetMapping("/about")
     public String about(){
