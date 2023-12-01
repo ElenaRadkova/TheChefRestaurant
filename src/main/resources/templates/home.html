@@ -16,7 +16,7 @@
             <p>"След една хубава вечеря, човек може да прости на всеки, дори на собствените си роднини."
                 Оскар Уайлд</p>
             <th:block th:unless="${@loggedUser.id == null}" >
-            <a th:action="@{/reservations/your/{id} (id= ${@reservationController.reservationServiceModel().id})}" class="btn">Your Reservation</a>
+            <a th:action="@{/reservations/your/{id} (id= ${@loggedUser.id})}" class="btn">Your Reservation</a>
             <br></br>
             </th:block>
             <th:block th:if="${@loggedUser.id == null}">
