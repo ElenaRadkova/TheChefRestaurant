@@ -9,15 +9,18 @@ import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.RoleNameEn
 @Entity
 @Table(name="roles")
 public class Role extends BaseEntity {
-    private RoleNameEnum name;
-
     public Role() {
     }
+    private RoleNameEnum role;
+
+
     @Enumerated(EnumType.STRING)
-    public RoleNameEnum getName() {
-        return name;
+
+    public RoleNameEnum getRole() {
+        return role;
     }
-    public void setName(RoleNameEnum name) {
-        this.name = name;
+
+    public void setRole(RoleNameEnum role) {
+        this.role = role;
     }
 }
