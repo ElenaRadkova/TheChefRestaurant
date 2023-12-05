@@ -22,7 +22,7 @@ spring:
         database-platform: org.hibernate.dialect.MySQL8Dialect
         defer-datasource-initialization: true
         hibernate:
-            ddl-auto: create
+            ddl-auto: validate
         open-in-view: false
         properties:
             hibernate:
@@ -36,7 +36,7 @@ spring:
         period: 0
     sql:
         init:
-            mode: always
+            mode: never
     thymeleaf:
         cache: false
         encoding: UTF-8
