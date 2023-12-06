@@ -1,6 +1,5 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.model.service;
 
-import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.Category;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.UserEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.CategoryNameEnum;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.SectionNameEnum;

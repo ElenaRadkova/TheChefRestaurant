@@ -1,7 +1,6 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.service;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.service.ReservationServiceModel;
-import softuni.TheChefRestaurant.TheChefRestaurant.model.view.ReservationViewModel;
-import softuni.TheChefRestaurant.TheChefRestaurant.model.view.YourReservationViewModel;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.view.YourReservationViewModel;
 
 
 public interface ReservationService {

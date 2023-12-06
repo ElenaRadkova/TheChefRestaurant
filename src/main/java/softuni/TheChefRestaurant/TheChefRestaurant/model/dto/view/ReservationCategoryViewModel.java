@@ -1,4 +1,4 @@
-package softuni.TheChefRestaurant.TheChefRestaurant.model.view;
+package softuni.TheChefRestaurant.TheChefRestaurant.model.dto.view;
 
 public class ReservationCategoryViewModel {
     private Long id;

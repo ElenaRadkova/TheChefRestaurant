@@ -8,8 +8,8 @@ import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.RoleNameEn
 
 @Entity
 @Table(name="roles")
-public class Role extends BaseEntity {
-    public Role() {
+public class RoleEntity extends BaseEntity {
+    public RoleEntity() {
     }
     private RoleNameEnum role;
 

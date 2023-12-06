@@ -1,7 +1,7 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.service.impl;
 
 import org.springframework.stereotype.Service;
-import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.Category;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.CategoryEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.CategoryNameEnum;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.CategoryRepository;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.CategoryService;
@@ -14,7 +14,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Category findCategoryByName(CategoryNameEnum categoryNameEnum) {
+    public CategoryEntity findCategoryByName(CategoryNameEnum categoryNameEnum) {
         return categoryRepository
                 .findByName(categoryNameEnum)
                 .orElse(null);

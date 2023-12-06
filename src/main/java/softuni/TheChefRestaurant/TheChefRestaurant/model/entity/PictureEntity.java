@@ -7,13 +7,13 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="pictures")
-public class Picture extends BaseEntity{
+public class PictureEntity extends BaseEntity{
     private String title;
     private String url;
     private UserEntity author;
-    private Reservation reservation;
+    private ReservationEntity reservationEntity;
 
-    public Picture() {
+    public PictureEntity() {
     }
     @Column(nullable = false)
     public String getTitle() {
@@ -40,11 +40,11 @@ public class Picture extends BaseEntity{
         this.author = author;
     }
     @ManyToOne
-    public Reservation getReservation() {
-        return reservation;
+    public ReservationEntity getReservation() {
+        return reservationEntity;
     }
 
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
+    public void setReservation(ReservationEntity reservationEntity) {
+        this.reservationEntity = reservationEntity;
     }
 }

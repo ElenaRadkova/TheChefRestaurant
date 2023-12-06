@@ -1,4 +1,4 @@
-package softuni.TheChefRestaurant.TheChefRestaurant.model.binding;
+package softuni.TheChefRestaurant.TheChefRestaurant.model.dto.binding;
 
 public class UserLoginBindingModel {
     private String username;

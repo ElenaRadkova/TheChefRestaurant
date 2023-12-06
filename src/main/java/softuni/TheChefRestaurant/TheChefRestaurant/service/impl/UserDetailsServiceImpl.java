@@ -1,24 +1,20 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.service.impl;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.UserEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.UserRepository;
-import softuni.TheChefRestaurant.TheChefRestaurant.service.UserDetailsService;
 
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.List;
 
-@Service
-public class TheChefUserDetailsServiceImpl implements UserDetailsService {
+public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserRepository userRepository;
 
-    public TheChefUserDetailsServiceImpl(UserRepository userRepository) {
+    public UserDetailsServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -32,16 +28,11 @@ public class TheChefUserDetailsServiceImpl implements UserDetailsService {
         return map(userEntity);
     }
     private UserDetails map(UserEntity user) {
-        Set<GrantedAuthority> grandAuthoritySet =
-                user
-                        .getRoles()
-                        .stream()
-                        .map(r -> new SimpleGrantedAuthority("ROLE_" + r.getRole().name()))
-                        .collect(Collectors.toUnmodifiableSet());
-        return new User(
-                user.getUsername(),
-                user.getPassword(),
-                grandAuthoritySet
-                );
+        return User
+                .withUsername(user.getUsername())
+                .password(user.getPassword())
+                .authorities(List.of())//TODO - add roles
+                .build();
+
     }
 }

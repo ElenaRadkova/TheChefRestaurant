@@ -9,14 +9,14 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name="comments")
-public class Comment extends BaseEntity{
+public class CommentEntity extends BaseEntity{
     private Boolean approved;
     private String textContent;
     private LocalDateTime created;
     private UserEntity author;
-    private Reservation reservation;
+    private ReservationEntity reservationEntity;
 
-    public Comment() {
+    public CommentEntity() {
     }
    @Column(nullable = false)
     public Boolean getApproved() {
@@ -47,10 +47,10 @@ public class Comment extends BaseEntity{
         this.author = author;
     }
    @ManyToOne
-    public Reservation getReservation() {
-        return reservation;
+    public ReservationEntity getReservation() {
+        return reservationEntity;
     }
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
+    public void setReservation(ReservationEntity reservationEntity) {
+        this.reservationEntity = reservationEntity;
     }
 }

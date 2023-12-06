@@ -1,11 +1,11 @@
-package softuni.TheChefRestaurant.TheChefRestaurant.model.binding;
+package softuni.TheChefRestaurant.TheChefRestaurant.model.dto.binding;
 
 import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
-import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.Category;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.CategoryEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.SectionNameEnum;
 
 import java.time.LocalDateTime;
@@ -18,7 +18,7 @@ public class AddReservationBindingModel {
     private LocalDateTime dateTime;
     private String phoneNumber;
     private String specialRequest;
-    private Set<Category> categories;
+    private Set<CategoryEntity> categories;
 
     public AddReservationBindingModel() {
     }
@@ -74,10 +74,10 @@ public class AddReservationBindingModel {
         this.specialRequest = specialRequest;
     }
 
-    public Set<Category> getCategories() {
+    public Set<CategoryEntity> getCategories() {
         return categories;
     }
-    public void setCategories(Set<Category> categories) {
+    public void setCategories(Set<CategoryEntity> categories) {
         this.categories = categories;
     }
 }

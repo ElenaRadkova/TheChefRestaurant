@@ -1,9 +1,9 @@
 -- https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto.data-initialization.using-basic-sql-scripts
 
--- user roles
-INSERT INTO roles (id, name)
+-- user roleEntities
+INSERT INTO roles (id, role)
 VALUES (1, 'ADMIN');
-INSERT INTO roles (id, name)
+INSERT INTO roles (id, role)
 VALUES (2, 'USER');
 
 -- some test users
@@ -15,7 +15,7 @@ VALUES (2, 'user@user.com', 'User Userov', '26dd1ba9ae974a70136ea446304637151666
 
 INSERT INTO users (id, email, full_name, password, username)
 VALUES (3, 'ivan@ivan.com', 'Ivan Ivanov', '26dd1ba9ae974a70136ea4463046371516661b0601ca0fb83a905876ca549b3473dd524d578e241b', 'ivan');
--- user roles
+-- user roleEntities
 -- admin
 INSERT INTO users_roles (`user_entity_id`, `roles_id`)
 VALUES (1, 1);
@@ -40,7 +40,7 @@ VALUES ('3', 'Reservation for special event.', 'CELEBRATE');
 
 
 
--- reservation
+-- reservationEntity
 INSERT INTO reservations ( name, phone_number, special_request, date_time, section, count_people, author_id)
 VALUES
     ('Иван Иванов',

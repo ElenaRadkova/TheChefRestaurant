@@ -7,27 +7,23 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import softuni.TheChefRestaurant.TheChefRestaurant.model.binding.AddReservationBindingModel;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.binding.AddReservationBindingModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.service.ReservationServiceModel;
-import softuni.TheChefRestaurant.TheChefRestaurant.model.view.ReservationViewModel;
-import softuni.TheChefRestaurant.TheChefRestaurant.model.view.YourReservationViewModel;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.view.ReservationViewModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.ReservationRepository;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.ReservationService;
-import softuni.TheChefRestaurant.TheChefRestaurant.util.LoggedUser;
 
 @Controller
 @RequestMapping("/reservations")
 
 public class ReservationController {
     private final ReservationService reservationService;
-    private final LoggedUser loggedUser;
     private final ModelMapper modelMapper;
     private final ReservationRepository reservationRepository;
 
 
-    public ReservationController(ReservationService reservationService, LoggedUser loggedUser, ModelMapper modelMapper, ReservationRepository reservationRepository) {
+    public ReservationController(ReservationService reservationService, ModelMapper modelMapper, ReservationRepository reservationRepository) {
         this.reservationService = reservationService;
-        this.loggedUser = loggedUser;
         this.modelMapper = modelMapper;
         this.reservationRepository = reservationRepository;
     }
@@ -45,8 +41,7 @@ public class ReservationController {
     }
     @GetMapping("reservations/your/{id}")
     public String your(@PathVariable Long id, Model model){
-        model.addAttribute("reservation", reservationService.findYourReservationById(id));
-        System.out.println(model);
+        model.addAttribute("reservation", modelMapper.map(reservationService.findYourReservationById(id), ReservationViewModel.class));
         return "your-reservation";
     }
 //    @GetMapping("/your/{id}")
@@ -59,9 +54,6 @@ public class ReservationController {
 
     @GetMapping("/add")
     public String add(){
-       if(loggedUser.getId() == null) {
-           return "redirect:/users/login";
-       }
         return "add-reservation";
     }
 
@@ -79,7 +71,6 @@ public class ReservationController {
 ////       reservationService.findYourReservationView();
         ReservationServiceModel reservationServiceModel = modelMapper.map(addReservationBindingModel, ReservationServiceModel.class);
         reservationService.addReservation(reservationServiceModel);
-
 
         return "redirect:/reservations/your";
     }

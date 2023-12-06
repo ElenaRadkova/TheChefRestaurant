@@ -1,6 +1,6 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.model.service;
 
-import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.Role;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.RoleEntity;
 
 import java.util.Set;
 
@@ -11,7 +11,7 @@ public class UserServiceModel {
     private String fullName;
     private String email;
 //    private String phoneNumber;
-    private Set<Role> roles;
+    private Set<RoleEntity> roleEntities;
 
     public UserServiceModel() {
     }
@@ -61,11 +61,11 @@ public class UserServiceModel {
 //    public void setPhoneNumber(String phoneNumber) {
 //        this.phoneNumber = phoneNumber;
 //    }
-    public Set<Role> getRoles() {
-        return roles;
+    public Set<RoleEntity> getRoles() {
+        return roleEntities;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setRoles(Set<RoleEntity> roleEntities) {
+        this.roleEntities = roleEntities;
     }
 }

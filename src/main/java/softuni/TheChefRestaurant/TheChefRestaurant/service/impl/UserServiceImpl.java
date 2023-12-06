@@ -1,53 +1,43 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.service.impl;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.UserService;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.UserEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.service.UserServiceModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.UserRepository;
-import softuni.TheChefRestaurant.TheChefRestaurant.util.LoggedUser;
 
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final ModelMapper modelMapper;
-    private final LoggedUser loggedUser;
+    private final UserDetailsService userDetailsService;
 
-    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, LoggedUser loggedUser) {
+    private final PasswordEncoder passwordEncoder;
+
+    public UserServiceImpl(UserRepository userRepository, ModelMapper modelMapper, UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
-        this.loggedUser = loggedUser;
+        this.userDetailsService = userDetailsService;
+        this.passwordEncoder = passwordEncoder;
     }
     @Override
     public void registerUser(UserServiceModel userServiceModel) {
         UserEntity user = modelMapper.map(userServiceModel, UserEntity.class);
         userRepository.save(user);
     }
-    @Override
-    public UserServiceModel findUserByUsernameAndPassword(String username, String password) {
-        return userRepository.findByUsernameAndPassword(username, password)
-                             .map(userEntity -> modelMapper.map(userEntity, UserServiceModel.class))
-                              .orElse(null);
-    }
-    @Override
-    public void loginUser(Long id, String username) {
-            loggedUser.setUsername(username);
-            loggedUser.setId(id);
-    }
 
     @Override
-    public void logout() {
-        loggedUser.setId(null);
-        loggedUser.setUsername(null);
-    }
-
-    @Override
-    public UserServiceModel findById() {
-        return userRepository.findById(loggedUser.getId())
+    public UserServiceModel findById(Long id) {
+        return userRepository.findById(id)
                               .map(userEntity -> modelMapper.map(userEntity, UserServiceModel.class))
                               .orElse(null);
-
     }
 
     @Override
@@ -57,8 +47,25 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity findByUserId() {
-        return userRepository.findById(loggedUser.getId()).orElse(null);
+        return userRepository.findById(findByUserId().getId()).orElse(null);
+    }
 
+    @Override
+    public void createUserIfNotExist(String email, String name) {
+    }
+    @Override
+    public Authentication login(String username) {
+        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+
+        Authentication auth = new UsernamePasswordAuthenticationToken(
+                userDetails,
+                userDetails.getPassword(),
+                userDetails.getAuthorities()
+        );
+
+        SecurityContextHolder.getContext().setAuthentication(auth);
+
+        return auth;
     }
 
 }

@@ -1,4 +1,4 @@
-package softuni.TheChefRestaurant.TheChefRestaurant.model.view;
+package softuni.TheChefRestaurant.TheChefRestaurant.model.dto.view;
 
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.UserEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.CategoryNameEnum;
@@ -26,70 +26,79 @@ public class ReservationViewModel {
         return id;
     }
 
-    public void setId(Long id) {
+    public ReservationViewModel setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public ReservationViewModel setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public ReservationViewModel setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
     }
 
     public SectionNameEnum getSection() {
         return section;
     }
 
-    public void setSection(SectionNameEnum section) {
+    public ReservationViewModel setSection(SectionNameEnum section) {
         this.section = section;
+        return this;
     }
 
     public LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public ReservationViewModel setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
+        return this;
     }
 
     public Integer getCountPeople() {
         return countPeople;
     }
 
-    public void setCountPeople(Integer countPeople) {
+    public ReservationViewModel setCountPeople(Integer countPeople) {
         this.countPeople = countPeople;
+        return this;
     }
 
     public String getSpecialRequest() {
         return specialRequest;
     }
 
-    public void setSpecialRequest(String specialRequest) {
+    public ReservationViewModel setSpecialRequest(String specialRequest) {
         this.specialRequest = specialRequest;
+        return this;
     }
 
     public Set<CategoryNameEnum> getCategories() {
         return categories;
     }
 
-    public void setCategories(Set<CategoryNameEnum> categories) {
+    public ReservationViewModel setCategories(Set<CategoryNameEnum> categories) {
         this.categories = categories;
+        return this;
     }
     public UserEntity getAuthor() {
         return author;
     }
 
-    public void setAuthor(UserEntity author) {
+    public ReservationViewModel setAuthor(UserEntity author) {
         this.author = author;
+        return this;
     }
 }

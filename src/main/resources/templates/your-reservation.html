@@ -10,40 +10,79 @@
     <header th:replace="~{fragments/navigation}">
     </header>
 
-    <input type = "hidden" name="reservationId" id="reservationId" >>
-    <div class = "your-main" th:object="${reservation}">
-        <!--/*@thymesVar id="reservations" type=""*/-->
-        <section class="reservation-info text-center">
-            <h2 th:text="'Thank you for your reservation,' + ${@loggedUser.username}"> </h2>
-            <p>You have reservation of the name:
-                <span th:text="${reservation.name}" id="name"></span>
-            </p>
-            <p>For:
-                <span th:text="${reservation.countPeople}" id="countPeople"></span> people
-            </p>
-            <p>Date and time for your reservation is:
-                <span id="dateTime"></span>
-            </p>
-            <p>You prefer
-                <span id="section">section</span>
-            </p>
-            <p>For
-                <span id="category">category of your reservation</span>
-            </p>
-        </section>
+    <main class="p-5 align-content-center bg-blur my-register-div">
+        <div class="container mt-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-7">
+                    <div class="reservation-info p-3 py-4">
+                        <div class="text-center"><img src="/images/logo.jpg" width="100" class="rounded-circle"></div>
+                        <div class="text-center mt-3">
+                        <span th:text="${reservationViewModel.author}"
+                              class="bg-secondary p-1 px-4 rounded text-white">, thank you for your reservation!</span>
+                            <h5 class="mt-4 mb-0">You have reservation of name</h5>
+                            <span th:text="${reservation.name}"></span>
+                            <h5 class="mt-2 mb-0">For</h5>
+                            <span th:text="${reservation.countPeople}">people</span>
+                            <h5 class="mt-2 mb-0">You want to be in</h5>
+                            <span th:text="${reservation.section}">area</span>
+                            <div class="px-4 mt-5">
+                                <p class="fonts">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim et nostrum
+                                    optio perferendis quam quod ratione rem sit soluta ut! A dolor laborum, maiores neque
+                                    nesciunt quis rerum sunt suscipit. </p>
+                            </div>
+                            <ul class="social-list">
+                                <li><i class="fab fa-facebook-square"></i></li>
+                                <li><i class="fab fa-instagram"></i></li>
+                                <li><i class="fab fa-linkedin"></i></li>
+                                <li><i class="fab fa-google"></i></li>
+                            </ul>
+                            <div class="buttons">
+                                <a th:href="@{/}"
+                                   th:text="Back"
+                                   class="btn btn-outline-primary px-4">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!--    <input type = "hidden" name="reservationId" id="reservationId" >>-->
+<!--    <div class = "your-main" th:object="${reservationEntity}">-->
+<!--        &lt;!&ndash;/*@thymesVar id="reservations" type=""*/&ndash;&gt;-->
+<!--        <section class="reservationEntity-info text-center">-->
+<!--            <h2 th:text="'Thank you for your reservationEntity,' + {use}"> </h2>-->
+<!--            <p>You have reservationEntity of the name:-->
+<!--                <span th:text="${reservationEntity.name}" id="name"></span>-->
+<!--            </p>-->
+<!--            <p>For:-->
+<!--                <span th:text="${reservationEntity.countPeople}" id="countPeople"></span> people-->
+<!--            </p>-->
+<!--            <p>Date and time for your reservationEntity is:-->
+<!--                <span id="dateTime"></span>-->
+<!--            </p>-->
+<!--            <p>You prefer-->
+<!--                <span id="section">section</span>-->
+<!--            </p>-->
+<!--            <p>For-->
+<!--                <span id="category">category of your reservationEntity</span>-->
+<!--            </p>-->
+<!--        </section>-->
 
 
 
-    </div>
+<!--    </div>-->
 
-<!--    <section th:object="${reservation}" th:action="@{/reservations/your/{id}}" class="reservation-info">-->
+<!--    <section th:object="${reservationEntity}" th:action="@{/reservations/your/{id}}" class="reservationEntity-info">-->
 <!--        <img src="/images/logo.jpg" alt="Title image">-->
 <!--        <div>-->
 <!--            <h2>Your Reservation</h2>-->
-<!--&lt;!&ndash;            <p>Thank you for your reservation</p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>Thank you for your reservationEntity</p>&ndash;&gt;-->
 
 <!--                <th:block th:text = "${@loggedUser.username} == null ? 'no user' : 'Thank you, '-->
-<!--                + *{name} + ' for your reservation! You have confirm for table for '-->
+<!--                + *{name} + ' for your reservationEntity! You have confirm for table for '-->
 <!--                + *{countPeople} + ' for ' + *{dateTime}-->
 <!--                + '. Your special request is: '-->
 <!--                + *{specialRequest}"></th:block>-->
@@ -54,7 +93,7 @@
 
 <!--        </div>-->
 <!--        <div class="text-center mt-3">-->
-<!--            <h5 class="mt-4 mb-0">Name of the reservation:</h5>-->
+<!--            <h5 class="mt-4 mb-0">Name of the reservationEntity:</h5>-->
 <!--            <span th:text="${@yourReservation.name}">UI/UX Designer</span>-->
 <!--            <h5 class="mt-2 mb-0">Count of people:</h5>-->
 <!--            <span th:text="${addReservationBindingModel.getCountPeople()}">UI/UX Designer</span>-->

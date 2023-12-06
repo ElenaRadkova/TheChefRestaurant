@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="reservations")
-public class Reservation extends BaseEntity{
+public class ReservationEntity extends BaseEntity{
     private String name;
     private String phoneNumber;
     private SectionNameEnum section;
@@ -17,13 +17,13 @@ public class Reservation extends BaseEntity{
     private LocalDateTime dateTime;
     private Integer countPeople;
     private String specialRequest;
-    private Set<Category> categories;
-    private Set<Picture> pictures;
+    private Set<CategoryEntity> categories;
+    private Set<PictureEntity> pictures;
 
 
 
 
-    public Reservation() {
+    public ReservationEntity() {
     }
 
     @Column(nullable = false)
@@ -84,18 +84,18 @@ public class Reservation extends BaseEntity{
     }
 
     @ManyToMany(fetch = FetchType.EAGER)
-    public Set<Category> getCategories() {
+    public Set<CategoryEntity> getCategories() {
         return categories;
     }
-    public void setCategories(Set<Category> categories) {
+    public void setCategories(Set<CategoryEntity> categories) {
         this.categories = categories;
     }
 
     @OneToMany(mappedBy = "reservation", fetch = FetchType.EAGER)
-    public Set<Picture> getPictures() {
+    public Set<PictureEntity> getPictures() {
         return pictures;
     }
-    public void setPictures(Set<Picture> pictures) {
+    public void setPictures(Set<PictureEntity> pictures) {
         this.pictures = pictures;
     }
 }

@@ -5,11 +5,11 @@ import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.CategoryNa
 
 @Entity
 @Table(name="categories")
-public class Category extends BaseEntity{
+public class CategoryEntity extends BaseEntity{
     private CategoryNameEnum name;
     private String description;
 
-    public Category() {
+    public CategoryEntity() {
     }
    @Enumerated(EnumType.STRING)
     public CategoryNameEnum getName() {

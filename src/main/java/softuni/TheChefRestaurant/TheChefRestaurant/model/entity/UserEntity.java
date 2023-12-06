@@ -12,7 +12,7 @@ public class UserEntity extends BaseEntity{
     private String fullName;
     private String email;
 //    private String phoneNumber;
-    private Set<Role> roles;
+    private Set<RoleEntity> roleEntities;
 
 
     public UserEntity() {
@@ -59,12 +59,12 @@ public class UserEntity extends BaseEntity{
 //    }
 
     @ManyToMany(fetch = FetchType.EAGER)
-    public Set<Role> getRoles() {
-        return roles;
+    public Set<RoleEntity> getRoles() {
+        return roleEntities;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setRoles(Set<RoleEntity> roleEntities) {
+        this.roleEntities = roleEntities;
     }
 
 

@@ -7,7 +7,9 @@ logging:
                 descriptor: TRACE
         org: WARN
         org.hibernate.SQL: DEBUG
-server: port = 8080
+        org.hibernate.orm.jdbc.bind: TRACE
+        org.springframework.security: TRACE
+#server: port = 8080
 spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -18,11 +20,13 @@ spring:
       multipart:
           max-file-size: 50MB
           max-request-size: 50MB
+    main:
+        allow-circular-references: true
     jpa:
         database-platform: org.hibernate.dialect.MySQL8Dialect
         defer-datasource-initialization: true
         hibernate:
-            ddl-auto: validate
+            ddl-auto: create
         open-in-view: false
         properties:
             hibernate:
@@ -36,7 +40,7 @@ spring:
         period: 0
     sql:
         init:
-            mode: never
+            mode: always
     thymeleaf:
         cache: false
         encoding: UTF-8

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
 <header th:fragment="navigation">
     <nav class="main-nav">
         <ul>
-            <th:block th:if="${@loggedUser.id == null}">
+            <th:block sec:authorize="!isAuthenticated()">
                 <li>
                     <a href="/">Home</a>
                 </li>
@@ -18,12 +20,12 @@
                     <a th:href="@{/about}">About</a>
                 </li>
             </th:block>
-            <th:block th:unless="${@loggedUser.id == null}">
+            <th:block sec:authorize="isAuthenticated()">
                 <li>
                     <a th:href="@{/reservations/add}">Add new reservation</a>
                 </li>
                 <li>
-                    <a th:href="@{/users/profile/{id}(id = ${@loggedUser.id})}">Profile</a>
+                    <a th:href="@{/users/profile/{id}}">Profile</a>
                 </li>
                 <li>
                     <a href="/">Admin</a>
@@ -34,9 +36,9 @@
                 <!--                    </form>-->
                 <a th:href="@{/users/logout}">Logout</a>
                 <!--            </li>-->
-                <li>
-                                    <th:block th:text = "${@loggedUser.username} == null ? 'no user' : 'Welcome, ' + ${@loggedUser.username}"></th:block>
-                </li>
+<!--                <li>-->
+<!--                                    <th:block th:text = "${@loggedUser.username} == null ? 'no user' : 'Welcome, ' + ${@loggedUser.username}"></th:block>-->
+<!--                </li>-->
             </th:block>
 
         </ul>
