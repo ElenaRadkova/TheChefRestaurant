@@ -11,21 +11,21 @@
                     <a href="/">Home</a>
                 </li>
                 <!--            <li th:unless="${@loggedUser.isLogged()}">-->
-                <a th:href="@{/users/login}">Login</a>
+                <a href="/users/login">Login</a>
                 </li>
                 <!--            <li th:unless="${@loggedUser.isLogged()}">-->
-                <a th:href="@{/users/register}">Register</a>
+                <a href="/users/registe}">Register</a>
                 </li>
                 <li>
-                    <a th:href="@{/about}">About</a>
+                    <a href="/about">About</a>
                 </li>
             </th:block>
             <th:block sec:authorize="isAuthenticated()">
                 <li>
-                    <a th:href="@{/reservations/add}">Add new reservation</a>
+                    <a href="/reservations/add">Add new reservation</a>
                 </li>
                 <li>
-                    <a th:href="@{/users/profile/{id}}">Profile</a>
+                    <a href="/users/profile/{id}">Profile</a>
                 </li>
                 <li>
                     <a href="/">Admin</a>

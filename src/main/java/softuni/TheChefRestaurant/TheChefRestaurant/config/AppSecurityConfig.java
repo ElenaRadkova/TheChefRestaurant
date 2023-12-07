@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.UserRepository;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.impl.UserDetailsServiceImpl;
 
@@ -47,9 +48,9 @@ public class AppSecurityConfig {
                                     .loginPage("/users/login")
                                     //the names of the input fields
                                     .usernameParameter("username")
-                                    .passwordParameter("password")
+                                    .passwordParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY)
                                     .defaultSuccessUrl("/");
-//                                    .failureForwardUrl("users/login-error");
+//                                    .failureForwardUrl("users/login?error");
                         }
                 ).logout(
                         logout -> {
@@ -72,5 +73,4 @@ public class AppSecurityConfig {
     public PasswordEncoder passwordEncoder() {
         return Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
     }
-
 }

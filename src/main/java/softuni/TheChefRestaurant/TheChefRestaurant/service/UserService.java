@@ -1,6 +1,6 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.service;
 
-import org.springframework.security.core.Authentication;
+
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.UserEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.service.UserServiceModel;
 
@@ -15,6 +15,6 @@ public interface UserService {
 
     void createUserIfNotExist(String email, String name);
 
-    Authentication login(String username);
+//    Authentication login(String username);
 
 }
