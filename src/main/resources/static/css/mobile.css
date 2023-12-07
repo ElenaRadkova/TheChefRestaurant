@@ -14,15 +14,15 @@
     grid-template-columns: 1fr;
   }
 
-  .road {
-    grid-template-columns: 1fr;
-  }
+  /*.road {*/
+  /*  grid-template-columns: 1fr;*/
+  /*}*/
 
-  .road .btn {
-    display: block;
-    text-align: center;
-    margin: auto;
-  }
+  /*.road .btn {*/
+  /*  display: block;*/
+  /*  text-align: center;*/
+  /*  margin: auto;*/
+  /*}*/
 }
 
 @media (max-width: 500px) {

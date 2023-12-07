@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
@@ -16,7 +17,7 @@ import softuni.TheChefRestaurant.TheChefRestaurant.service.impl.UserDetailsServi
 
 
 @Configuration
-@EnableMethodSecurity
+@EnableWebSecurity
 public class AppSecurityConfig {
 
 //    private final OAuthSuccessHandler oAuthSuccessHandler;

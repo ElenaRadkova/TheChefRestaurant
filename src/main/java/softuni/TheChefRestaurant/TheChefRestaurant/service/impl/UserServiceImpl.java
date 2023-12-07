@@ -35,19 +35,19 @@ public class UserServiceImpl implements UserService {
                               .orElse(null);
     }
 
-    @Override
-    public boolean isUsernameExists(String username) {
-        return userRepository.findByUsername(username).isPresent();
-    }
-
-    @Override
-    public UserEntity findByUserId() {
-        return userRepository.findById(findByUserId().getId()).orElse(null);
-    }
-
-    @Override
-    public void createUserIfNotExist(String email, String name) {
-    }
+//    @Override
+//    public boolean isUsernameExists(String username) {
+//        return userRepository.findByUsername(username).isPresent();
+//    }
+//
+//    @Override
+//    public UserEntity findByUserId() {
+//        return userRepository.findById(findByUserId().getId()).orElse(null);
+//    }
+//
+//    @Override
+//    public void createUserIfNotExist(String email, String name) {
+//    }
 //    @Override
 //    public Authentication login(String username) {
 //        UserDetails userDetails = userDetailsService.loadUserByUsername(username);

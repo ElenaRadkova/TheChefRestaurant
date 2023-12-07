@@ -9,12 +9,12 @@ public interface UserService {
 
     UserServiceModel findById(Long id);
 
-    boolean isUsernameExists(String username);
-
-    UserEntity findByUserId();
-
-    void createUserIfNotExist(String email, String name);
-
-//    Authentication login(String username);
+//    boolean isUsernameExists(String username);
+//
+//    UserEntity findByUserId();
+//
+//    void createUserIfNotExist(String email, String name);
+//
+////    Authentication login(String username);
 
 }
