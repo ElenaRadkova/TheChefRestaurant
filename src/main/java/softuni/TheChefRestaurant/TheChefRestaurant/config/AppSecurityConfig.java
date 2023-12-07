@@ -11,27 +11,19 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.UserRepository;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.impl.UserDetailsServiceImpl;
 
 
+
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class AppSecurityConfig {
-
-//    private final OAuthSuccessHandler oAuthSuccessHandler;
-//
-//    private final UserDetailsServiceImpl theChefUserDetailsService;
-//
-//    public AppSecurityConfig(OAuthSuccessHandler oAuthSuccessHandler, UserDetailsServiceImpl theChefUserDetailsService) {
-//        this.oAuthSuccessHandler = oAuthSuccessHandler;
-//        this.theChefUserDetailsService = theChefUserDetailsService;
-//    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.
+         httpSecurity.
                 authorizeHttpRequests(
                         //Define which urls are visible by which users
                         authorizeRequest -> authorizeRequest
@@ -49,9 +41,8 @@ public class AppSecurityConfig {
                                     .loginPage("/users/login")
                                     //the names of the input fields
                                     .usernameParameter("username")
-                                    .passwordParameter(UsernamePasswordAuthenticationFilter.SPRING_SECURITY_FORM_PASSWORD_KEY)
+                                    .passwordParameter("password")
                                     .defaultSuccessUrl("/");
-//                                    .failureForwardUrl("users/login?error");
                         }
                 ).logout(
                         logout -> {
@@ -70,8 +61,9 @@ public class AppSecurityConfig {
   public UserDetailsService userDetailsService(UserRepository userRepository) {
         return new UserDetailsServiceImpl(userRepository);
   }
-    @Bean
-    public PasswordEncoder passwordEncoder() {
+  @Bean
+  public PasswordEncoder passwordEncoder() {
         return Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
     }
 }
+

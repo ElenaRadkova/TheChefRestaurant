@@ -49,7 +49,7 @@ public class UserController {
 
         userService.registerUser(modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
 
-        return "redirect:/users/login";
+        return "redirect:/";
     }
 
     @GetMapping("/profile/{id}")

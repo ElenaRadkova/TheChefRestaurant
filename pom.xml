@@ -73,11 +73,6 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>org.thymeleaf.extras</groupId>-->
-<!--			<artifactId>thymeleaf-extras-springsecurity5</artifactId>-->
-<!--			<version>3.0.4.RELEASE</version>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>org.thymeleaf.extras</groupId>
 			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
@@ -103,16 +98,13 @@
 			<artifactId>TheChefRestaurant</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+        <dependency>
+            <groupId>org.awaitility</groupId>
+            <artifactId>awaitility</artifactId>
+            <version>4.2.0</version>
+        </dependency>
 
-	</dependencies>
-<!--	<repositories>-->
-<!--		<repository>-->
-<!--			<id>snapshots-repo</id>-->
-<!--			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>-->
-<!--			<releases><enabled>false</enabled></releases>-->
-<!--			<snapshots><enabled>true</enabled></snapshots>-->
-<!--		</repository>-->
-<!--	</repositories>-->
+    </dependencies>
 
 	<build>
 		<plugins>
