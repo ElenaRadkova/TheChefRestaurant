@@ -29,10 +29,11 @@
                     <a href="/">Admin</a>
                 </li>
                 <a href="/users/logout">Logout</a>
-                <!--            </li>-->
-<!--                <li>-->
-<!--                                    <th:block th:text = "${@loggedUser.username} == null ? 'no user' : 'Welcome, ' + ${@loggedUser.username}"></th:block>-->
-<!--                </li>-->
+                <li>
+                    <div class="logged-user">
+                        Welcome, <th:block sec:authentication="name"></th:block>!
+                    </div>
+                </li>
             </th:block>
 
         </ul>

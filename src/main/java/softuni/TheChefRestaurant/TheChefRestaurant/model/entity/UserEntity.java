@@ -23,32 +23,36 @@ public class UserEntity extends BaseEntity{
         return username;
     }
 
-    public void setUsername(String username) {
+    public UserEntity setUsername(String username) {
         this.username = username;
+        return this;
     }
     @Column(nullable = false)
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public UserEntity setPassword(String password) {
         this.password = password;
+        return this;
     }
     @Column(nullable = false)
     public String getFullName() {
         return fullName;
     }
 
-    public void setFullName(String fullName) {
+    public UserEntity setFullName(String fullName) {
         this.fullName = fullName;
+        return this;
     }
     @Column(nullable = false, unique = true)
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public UserEntity setEmail(String email) {
         this.email = email;
+        return this;
     }
 //    @Column(nullable = false, unique = true, columnDefinition = "TEXT")
 //    public String getPhoneNumber() {
@@ -63,8 +67,9 @@ public class UserEntity extends BaseEntity{
         return roleEntities;
     }
 
-    public void setRoles(Set<RoleEntity> roleEntities) {
+    public UserEntity setRoles(Set<RoleEntity> roleEntities) {
         this.roleEntities = roleEntities;
+        return this;
     }
 
 

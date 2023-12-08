@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.RegisterUserDTO;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.binding.UserRegisterBindingModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.service.UserServiceModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.view.UserViewModel;
@@ -34,20 +35,18 @@ public class UserController {
         return "register";
     }
     @PostMapping("/register")
-    public String registerConfirm(@Valid UserRegisterBindingModel userRegisterBindingModel,
-                                  BindingResult bindingResult, RedirectAttributes redirectAttributes){
-        if(bindingResult.hasErrors()){
-            redirectAttributes
-                    .addFlashAttribute("userRegisterBindingModel",userRegisterBindingModel);
-            redirectAttributes
-                    .addFlashAttribute("org.springframework.validation.BindingResult.userRegisterBindingModel",
-                                                                              bindingResult);
-            return "redirect:/users/register";
-        }
+    public String register(RegisterUserDTO registerUserDTO) {
 
-        //TODO...
+//        boolean isBot = !reCaptchaService
+//                .verify(reCaptchaResponse)
+//                .map(ReCaptchaResponseDTO::isSuccess)
+//                .orElse(false);
+//
+//        if (isBot) {
+//            return "redirect:/";
+//        }
 
-        userService.registerUser(modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
+        userService.registerUser(registerUserDTO);
 
         return "redirect:/";
     }
