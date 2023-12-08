@@ -49,8 +49,8 @@ public class AppSecurityConfig {
                         logout -> {
                             logout
                                     .logoutUrl("/users/logout")
-                                    .logoutSuccessUrl("/")
-                                    .invalidateHttpSession(true);
+                                    .logoutSuccessUrl("/");
+//                                    .invalidateHttpSession(true);
                         }
                 );
         //TODO remember me!

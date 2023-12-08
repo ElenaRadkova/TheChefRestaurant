@@ -13,7 +13,7 @@ logging:
 spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        password: 123max123
+        password: ${db_password:}
         url: jdbc:mysql://localhost:3306/the_chef_db?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
         username: root
     servlet:
@@ -26,7 +26,7 @@ spring:
         database-platform: org.hibernate.dialect.MySQL8Dialect
         defer-datasource-initialization: true
         hibernate:
-            ddl-auto: update
+            ddl-auto: create
         open-in-view: false
         properties:
             hibernate:
@@ -40,7 +40,7 @@ spring:
         period: 0
     sql:
         init:
-            mode: never
+            mode: always
     thymeleaf:
         cache: false
         encoding: UTF-8

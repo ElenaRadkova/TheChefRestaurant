@@ -72,7 +72,7 @@ public class ReservationController {
         ReservationServiceModel reservationServiceModel = modelMapper.map(addReservationBindingModel, ReservationServiceModel.class);
         reservationService.addReservation(reservationServiceModel);
 
-        return "redirect:/reservations/your";
+        return "redirect:/";
     }
 
 
