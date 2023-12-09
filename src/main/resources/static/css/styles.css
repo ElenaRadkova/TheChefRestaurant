@@ -88,12 +88,12 @@ img {
 /* Showcase */
 .showcase {
     grid-area: showcase;
-    min-height: 400px;
+    min-height: 600px;
     background: url("../images/litle-home-cover.jpg");
     /*background: repeat;*/
     background-size: cover;
     background-position: center;
-    padding: 3rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -104,13 +104,13 @@ img {
 
 .showcase h1 {
     font-size: 4rem;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     color: var(--light);
     animation-delay: 1s;
 }
 
 .showcase p {
-    font-size: 2rem;
+    font-size: 3rem;
     margin-top: 0;
     color: var(--light);
     animation-delay: 1.5s;
@@ -119,6 +119,7 @@ img {
     animation-delay: 2s;
 }
 .anim{
+    padding-top: 0;
     opacity: 0;
     transform: translateY(30px);
     animation: moveUp 1s linear forwards;
@@ -155,7 +156,7 @@ img {
 /* Boxes */
 .boxes {
     display: grid;
-    grid-gap: 100px;
+    grid-gap: 150px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
@@ -181,7 +182,7 @@ img {
 /* Portfolio */
 .gallery {
     display: grid;
-    grid-gap: 100px;
+    grid-gap: 150px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
@@ -207,6 +208,7 @@ footer {
     background-color: #747a80;
     color: white;
     padding: 5rem;
+    margin-top: 4rem;
     border-radius: 5rem;
 }
 .contact-info{
