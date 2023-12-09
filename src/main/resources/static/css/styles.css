@@ -90,7 +90,7 @@ img {
     grid-area: showcase;
     min-height: 400px;
     background: url("../images/litle-home-cover.jpg");
-    background: repeat;
+    /*background: repeat;*/
     background-size: cover;
     background-position: center;
     padding: 3rem;
@@ -234,7 +234,7 @@ footer {
 }
 
 .info div:nth-child(3) {
-    background-image: url("../images/about2.jpg");
+    background-image: url("../images/chef.jpg");
     background-size: cover;
     border-bottom-left-radius: 5rem;
     border-top-right-radius: 5rem;
