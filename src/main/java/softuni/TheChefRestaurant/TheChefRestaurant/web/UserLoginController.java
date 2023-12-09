@@ -21,4 +21,8 @@ public class UserLoginController {
 
         return "login";
     }
+//    @GetMapping("users/logout")
+//    public String logout() {
+//        return "logout";
+//    }
 }

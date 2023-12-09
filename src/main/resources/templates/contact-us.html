@@ -1,0 +1,57 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head}">
+</head>
+<title>Contact Us</title>
+<body>
+<div class="wrapper">
+  <!-- Navigation -->
+  <header th:replace="~{fragments/navigation}"></header>
+
+  <div class="contact">
+      <div class="contact-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2970.363175290791!2d23.466694!3d41.88504600000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ababe97a7e503f%3A0xaaa12b472a57d667!2sThe%20Chef!5e0!3m2!1sbg!2sbg!4v1702051386386!5m2!1sbg!2sbg" width="1250" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="contact-info">
+          <li>
+              <h4>Address</h4>
+              <span class="recycling"><img src="/images/address3.webp" height="50px" width="50"
+                                           alt="Img"></span>
+              <p>Bulgaria</p>
+              <p>2760 Razlog</p>
+              <p>Center</p>
+              <p>6 Sheinovo Str</p>
+          </li>
+
+          <li>
+              <h4>Phone</h4>
+              <span class="recycling"><img class="recycling"
+                                           src="/images/phone5.webp" height="50px" width="50" alt="Img"></span>
+              <p>+359 887 369 294</p>
+              <p>+359 877 111 666</p>
+          </li>
+          <li>
+              <h4>Email</h4>
+              <span class="recycling"><img class="recycling"
+                                           src="/images/email2.webp" height="50px" width="50"
+                                           alt="Img"></span>
+              <p>thechefclub22@gmail.com</p>
+          </li>
+          <li>
+              <h4>Working time</h4>
+              <span class="recycling"><img class="recycling"
+                                           src="/images/workingTime.png" height="50px" width="50"
+                                           alt="Img"></span>
+              <p>Monday - Saturday</p>
+              <p>from 09:00 to 23:00</p>
+          </li>
+      </div>
+  </div>
+
+</div>
+<div th:replace="~{fragments/footer}"></div>
+<!-- Wrapper Ends -->
+</body>
+
+</html>

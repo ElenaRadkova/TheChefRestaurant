@@ -11,23 +11,22 @@
     <header th:replace="~{fragments/navigation}"></header>
 
     <!-- Top Container -->
-    <section class="top-container" >
-        <div class="showcase" >
-            <h1>THE CHEF RESTAURANT</h1>
-            <p>"След една хубава вечеря, човек може да прости на всеки, дори на собствените си роднини."
+    <section class="top-container">
+        <div class="showcase">
+            <h1 class="anim">THE CHEF RESTAURANT</h1>
+            <p class="anim">"След една хубава вечеря, човек може да прости на всеки, дори на собствените си роднини."
                 Оскар Уайлд</p>
             <th:block sec:authorize="isAuthenticated()">
-            <a class="btn">Your Reservation</a>
+            <a class="btn anim">Your Reservation</a>
             <br></br>
             </th:block>
             <th:block sec:authorize="!isAuthenticated()">
-            <a href="https://thechef-club.com/%d0%bc%d0%b5%d0%bd%d1%8e/" class="btn">Look our Menu</a>
+            <a href="https://thechef-club.com/%d0%bc%d0%b5%d0%bd%d1%8e/" class="btn anim">Look our Menu</a>
             </br>
-            <a href="https://thechef-club.com/%d0%b2%d0%b8%d0%bd%d0%b5%d0%bd-%d0%bb%d0%b8%d1%81%d1%82/" class="btn">Look our Wine List</a>
+            <a href="https://thechef-club.com/%d0%b2%d0%b8%d0%bd%d0%b5%d0%bd-%d0%bb%d0%b8%d1%81%d1%82/" class="btn anim">Look our Wine List</a>
             </th:block>
         </div>
     </section>
-
     <!-- Boxes Section -->
     <section class="boxes">
         <a href="/" class="main-btn" >
@@ -53,14 +52,12 @@
         </a>
     </section>
 
-
     <!-- Portfolio -->
     <section class="gallery">
         <img src="/images/1.jpg" width="150px" height="250px" alt="">
         <img src="/images/cocktail3.jpg" width="150px" height="250px" alt="">
         <img src="/images/5.jpg" width="150px" height="250px" alt="">
     </section>
-
 </div>
 <!-- Wrapper Ends -->'
 

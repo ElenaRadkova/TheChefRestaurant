@@ -38,7 +38,6 @@ body {
 
 .main-btn:hover {
     text-decoration: none;
-
 }
 
 
@@ -73,8 +72,8 @@ img {
 }
 
 .main-nav a:hover {
-    background: var(--dark);
-    color: var(--light);
+    background: #f5f0f0;
+    color: darkred;
 }
 
 /* Top Container */
@@ -99,18 +98,35 @@ img {
     align-items: start;
     justify-content: center;
     box-shadow: var(--shadow);
+    animation-delay: 0.5s;
 }
 
 .showcase h1 {
     font-size: 4rem;
     margin-bottom: 50px;
     color: var(--light);
+    animation-delay: 1s;
 }
 
 .showcase p {
     font-size: 2rem;
     margin-top: 0;
     color: var(--light);
+    animation-delay: 1.5s;
+}
+.showcase a{
+    animation-delay: 2s;
+}
+.anim{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveUp 1s linear forwards;
+}
+@keyframes moveUp {
+    100%{
+        opacity: 1;
+        transform: translateY(30px);
+    }
 }
 
 /* Top Box */
@@ -191,6 +207,18 @@ footer {
     color: white;
     padding: 5rem;
     border-radius: 5rem;
+}
+.contact-info{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style: none;
+    text-align: center;
+}
+.contact-map{
+    display: flex;
+    padding: 5rem;
+    text-align: center;
 }
 
 .info div {
@@ -347,3 +375,9 @@ body {
     height: 40px;
     background-color: #0833e3
 }
+
+/*.main-nav{*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    width: 100%;*/
+/*}*/

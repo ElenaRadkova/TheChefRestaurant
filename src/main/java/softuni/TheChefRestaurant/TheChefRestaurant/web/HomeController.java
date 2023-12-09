@@ -28,6 +28,10 @@ public class HomeController {
     public String about(){
         return "about";
     }
+    @GetMapping("/contact-us")
+    public String contactUs() {
+        return "contact-us";
+    }
 
 
 }

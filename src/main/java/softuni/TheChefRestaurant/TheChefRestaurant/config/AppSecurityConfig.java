@@ -15,7 +15,6 @@ import softuni.TheChefRestaurant.TheChefRestaurant.repository.UserRepository;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.impl.TheChefUserDetailsService;
 
 
-
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
@@ -30,7 +29,7 @@ public class AppSecurityConfig {
                                 //All static recourses which are situated in js, images, css are available for all
                                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                                 //Allow anyone to see the home page, register and login
-                                .requestMatchers("/", "/users/register", "/users/login").permitAll()
+                                .requestMatchers("/", "/users/register", "/users/login", "/contact-us", "/about").permitAll()
                                 //all others are authenticated
                                 .anyRequest().authenticated()
 
@@ -43,14 +42,14 @@ public class AppSecurityConfig {
                                     .usernameParameter("username")
                                     .passwordParameter("password")
                                     .defaultSuccessUrl("/")
-                                    .failureForwardUrl("/users/login-error");;
+                                    .failureForwardUrl("/users/login-error");
                         }
                 ).logout(
                         logout -> {
                             logout
                                     .logoutUrl("/users/logout")
-                                    .logoutSuccessUrl("/");
-//                                    .invalidateHttpSession(true);
+                                    .logoutSuccessUrl("/")
+                                    .invalidateHttpSession(true);
                         }
                 );
         //TODO remember me!
