@@ -90,6 +90,7 @@ img {
     grid-area: showcase;
     min-height: 400px;
     background: url("../images/litle-home-cover.jpg");
+    background: repeat;
     background-size: cover;
     background-position: center;
     padding: 3rem;
@@ -375,6 +376,7 @@ body {
     height: 40px;
     background-color: #0833e3
 }
+
 
 /*.main-nav{*/
 /*    position: fixed;*/
