@@ -29,7 +29,8 @@ public class AppSecurityConfig {
                                 //All static recourses which are situated in js, images, css are available for all
                                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                                 //Allow anyone to see the home page, register and login
-                                .requestMatchers("/", "/users/register", "/users/login", "/contact-us", "/about").permitAll()
+                                .requestMatchers("/", "/users/register", "/users/login", "/contact-us", "/about",
+                                        "individual", "cocktail", "celebrate").permitAll()
                                 //all others are authenticated
                                 .anyRequest().authenticated()
 

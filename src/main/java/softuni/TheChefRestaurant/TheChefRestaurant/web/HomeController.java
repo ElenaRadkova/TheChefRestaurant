@@ -32,6 +32,18 @@ public class HomeController {
     public String contactUs() {
         return "contact-us";
     }
+    @GetMapping("/individual")
+    public String individual() {
+        return "individual";
+    }
+    @GetMapping("/cocktail")
+    public String cocktail() {
+        return "cocktail";
+    }
+    @GetMapping("/celebrate")
+    public String celebrate() {
+        return "celebrate";
+    }
 
 
 }
