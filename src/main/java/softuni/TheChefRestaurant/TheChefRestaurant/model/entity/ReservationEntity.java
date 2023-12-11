@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.SectionNameEnum;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,12 +20,20 @@ public class ReservationEntity extends BaseEntity{
     private String specialRequest;
     private Set<CategoryEntity> categories;
     private Set<PictureEntity> pictures;
-    private 
+    private List<CommentEntity> comments;
 
 
 
 
     public ReservationEntity() {
+    }
+    @OneToMany(mappedBy = "reservation")
+    public List<CommentEntity> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentEntity> comments) {
+        this.comments = comments;
     }
 
     @Column(nullable = false)

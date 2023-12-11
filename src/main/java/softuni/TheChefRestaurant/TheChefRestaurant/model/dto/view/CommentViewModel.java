@@ -11,53 +11,59 @@ public class CommentViewModel {
     private boolean delete;
     private String textContent;
     private LocalDateTime created;
-    private UserEntity author;
+    private String author;
 
     public Long getCommentId() {
         return commentId;
     }
 
-    public void setCommentId(Long commentId) {
+    public CommentViewModel setCommentId(Long commentId) {
         this.commentId = commentId;
+        return this;
     }
 
     public boolean isApproved() {
         return approved;
     }
 
-    public void setApproved(boolean approved) {
+    public CommentViewModel setApproved(boolean approved) {
         this.approved = approved;
+        return this;
     }
 
     public boolean isDelete() {
         return delete;
     }
 
-    public void setDelete(boolean delete) {
+    public CommentViewModel setDelete(boolean delete) {
         this.delete = delete;
+        return this;
     }
 
     public String getTextContent() {
         return textContent;
     }
 
-    public void setTextContent(String textContent) {
+    public CommentViewModel setTextContent(String textContent) {
         this.textContent = textContent;
+        return this;
     }
 
     public LocalDateTime getCreated() {
         return created;
     }
 
-    public void setCreated(LocalDateTime created) {
+    public CommentViewModel setCreated(LocalDateTime created) {
         this.created = created;
+        return this;
     }
 
-    public UserEntity getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(UserEntity author) {
+    public CommentViewModel setAuthor(String author) {
         this.author = author;
+        return this;
     }
 }
