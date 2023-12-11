@@ -14,7 +14,7 @@ public class CommentRestController {
     @GetMapping("/api/{reservationId}/comments")
         public ResponseEntity<List<CommentViewModel>> getComments(
                 @PathVariable Long reservationId, Principal principal) {
-
+          return null;
 
     }
 

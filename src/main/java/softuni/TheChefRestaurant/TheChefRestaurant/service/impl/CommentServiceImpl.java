@@ -1,6 +1,7 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.service.impl;
 
 import org.springframework.stereotype.Service;
+import softuni.TheChefRestaurant.TheChefRestaurant.exeptions.ObjectNotFoundException;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.view.CommentViewModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.ReservationRepository;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.CommentService;
@@ -18,7 +19,12 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public List<CommentViewModel> getComments(Long reservationId) {
-        reservationRepository.findById(reservationId);
-        return null;
+
+        var reservationOpt = reservationRepository.findById(reservationId);
+
+        if(reservationOpt.isEmpty()) {
+            throw new ObjectNotFoundException("Reservation with id " + reservationId + "was not found!");
+        }
+        return reservationOpt.get().;
     }
 }

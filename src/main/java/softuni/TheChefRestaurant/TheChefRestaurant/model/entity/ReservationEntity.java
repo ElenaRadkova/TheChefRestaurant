@@ -19,6 +19,7 @@ public class ReservationEntity extends BaseEntity{
     private String specialRequest;
     private Set<CategoryEntity> categories;
     private Set<PictureEntity> pictures;
+    private 
 
 
 
