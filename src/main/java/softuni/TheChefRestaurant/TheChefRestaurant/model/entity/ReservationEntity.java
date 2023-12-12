@@ -27,7 +27,7 @@ public class ReservationEntity extends BaseEntity{
 
     public ReservationEntity() {
     }
-    @OneToMany(mappedBy = "reservation")
+    @OneToMany(mappedBy = "reservation", fetch = FetchType.EAGER)
     public List<CommentEntity> getComments() {
         return comments;
     }

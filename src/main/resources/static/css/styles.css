@@ -76,7 +76,6 @@ img {
     color: darkred;
 }
 
-/* Top Container */
 .top-container {
     display: grid;
     grid-gap: 20px;
@@ -85,7 +84,6 @@ img {
     'showcase showcase top-box-b';
 }
 
-/* Showcase */
 .showcase {
     grid-area: showcase;
     min-height: 500px;
@@ -167,18 +165,6 @@ img {
     box-shadow: var(--shadow);
 }
 
-/* Info */
-/*.road {*/
-/*    background: var(--primary);*/
-/*    box-shadow: var(--shadow);*/
-/*    display: grid;*/
-/*    grid-gap: 30px;*/
-/*    grid-template-columns: repeat(2, 1fr);*/
-/*    padding: 3rem;*/
-/*    grid-row: auto;*/
-/*}*/
-
-
 /* Portfolio */
 .gallery {
     display: grid;
@@ -233,19 +219,6 @@ footer {
     margin-top: 4rem;
     border-radius: 5rem;
 }
-.contact-info{
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    list-style: none;
-    text-align: center;
-}
-.contact-map{
-    display: flex;
-    padding: 5rem;
-    text-align: center;
-}
-
 .info div {
     text-align: center;
 }
@@ -262,6 +235,22 @@ footer {
     background-size: cover;
     border-bottom-left-radius: 5rem;
     border-top-right-radius: 5rem;
+}
+/*Contacts*/
+.contact-info{
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style: none;
+    text-align: center;
+}
+.contact-map{
+    display: flex;
+    /*padding: 1rem;*/
+    text-align: center;
+}
+.contact-info p{
+    margin-bottom: 0px !important;
 }
 
 .details-main {
@@ -281,15 +270,12 @@ footer {
     grid-template-columns: repeat(3, 1fr);
 
 }
-
 .reservation-info, .reservation-description, .comments {
     background-color: var(--lightGray);
     padding: 20px;
     border-radius: 10px;
     margin-left: 10px;
     margin-top: 10%;
-
-
 }
 
 .reservation-info {
@@ -409,6 +395,7 @@ body {
 .form-control{
     width: 60% !important;
 }
+
 
 
 /*.main-nav{*/
