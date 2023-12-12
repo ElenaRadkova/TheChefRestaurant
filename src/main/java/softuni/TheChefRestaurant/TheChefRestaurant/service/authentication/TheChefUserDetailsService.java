@@ -1,4 +1,4 @@
-package softuni.TheChefRestaurant.TheChefRestaurant.service.impl;
+package softuni.TheChefRestaurant.TheChefRestaurant.service.authentication;
 
 
 import org.springframework.security.core.GrantedAuthority;
@@ -19,7 +19,6 @@ public class TheChefUserDetailsService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
-
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository
@@ -31,7 +30,7 @@ public class TheChefUserDetailsService implements UserDetailsService {
 
     private static UserDetails map(UserEntity userEntity) {
         return User
-                .withUsername(userEntity.getEmail())
+                .withUsername(userEntity.getUsername())
                 .password(userEntity.getPassword())
                 .authorities(userEntity.getRoles().stream().map(TheChefUserDetailsService::map).toList())
                 .build();

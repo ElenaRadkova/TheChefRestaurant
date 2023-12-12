@@ -11,15 +11,11 @@
     <header th:replace="~{fragments/navigation}"></header>
 
     <!-- Top Container -->
-    <section class="top-container">
+    <section  class="top-container">
         <div class="showcase">
             <h1 class="anim">THE CHEF RESTAURANT</h1>
             <p class="anim">"След една хубава вечеря, човек може да прости на всеки, дори на собствените си роднини."
                 Оскар Уайлд</p>
-            <th:block sec:authorize="isAuthenticated()">
-            <a class="btn anim">Your Reservation</a>
-            <br></br>
-            </th:block>
             <th:block sec:authorize="!isAuthenticated()">
             <a href="https://thechef-club.com/%d0%bc%d0%b5%d0%bd%d1%8e/" class="btn anim">Look our Menu</a>
             </br>

@@ -2,12 +2,15 @@ package softuni.TheChefRestaurant.TheChefRestaurant.service.impl;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.view.ReservationViewModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.ReservationEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.service.ReservationServiceModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.view.YourReservationViewModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.ReservationRepository;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.ReservationService;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.UserService;
+
+import java.util.List;
 
 
 @Service
@@ -48,9 +51,22 @@ public class ReservationServiceImpl implements ReservationService {
                 .orElse(null);
     }
 
-
-
-
+    @Override
+    public List<ReservationViewModel> findAllRoutesView() {
+        return  reservationRepository
+                .findAll()
+                .stream()
+                .map(reservation -> {
+                    ReservationViewModel reservationViewModel = modelMapper.map(reservation, ReservationViewModel.class);
+                    if (reservation.getPictures().isEmpty()) {
+                        reservationViewModel.setPictureUrl("/images/salad.jpg");
+                    } else {
+                        reservationViewModel.setPictureUrl(reservation.getPictures().stream().findFirst().get().getUrl());
+                    }
+                    return reservationViewModel;
+                })
+                .toList();
+    }
 
 
 }

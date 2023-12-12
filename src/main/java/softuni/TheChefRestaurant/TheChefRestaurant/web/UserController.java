@@ -48,10 +48,10 @@ public class UserController {
 
         userService.registerUser(registerUserDTO);
 
-        return "redirect:/";
+        return "redirect:/login";
     }
 
-    @GetMapping("/profile/{id}")
+    @GetMapping("/profile")
     private String profile(@PathVariable Long id, Model model){
         model.addAttribute("user", modelMapper
                              .map(userService.findById(id), UserViewModel.class));

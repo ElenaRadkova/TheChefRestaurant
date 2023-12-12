@@ -23,28 +23,25 @@
                     <a href="/reservations/add">Add new reservation</a>
                 </li>
                 <li>
-                    <a href="/profile">Profile</a>
+                    <a th:href="@{/profile}">Profile</a>
                 </li>
                 <li>
                     <a href="/">Admin</a>
                 </li>
 <!--                <li>-->
-<!--                    <a th:method="post" th:action="@{/users/logout}">Logout</a>-->
+<!--                    <a href="/users/logout">Logout</a>-->
 <!--                </li>-->
-<!--                    <div class="logged-user">-->
-<!--                        Welcome, <th:block sec:authentication="name"></th:block>!-->
-<!--                    </div>-->
+
                 <li class="nav-item" sec:authorize="isAuthenticated()" >
-                        <div class="logged-user" >
-                            Welcome, <th:block th:field="*{name}"></th:block>!
-                        </div>
+                    <div class="logged-user">
+                        Welcome, <th:block sec:authentication="name"></th:block>!
+                    </div>
                         <form th:method="post"
                               th:action="@{/users/logout}">
                             <input type="submit" class="btn btn-link" value="Logout"/>
-                        </form>
+                       </form>
                 </li>
             </th:block>
-
         </ul>
     </nav>
 </header>

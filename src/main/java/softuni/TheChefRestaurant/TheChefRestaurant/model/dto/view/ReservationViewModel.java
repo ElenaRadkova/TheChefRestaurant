@@ -17,6 +17,7 @@ public class ReservationViewModel {
     private String specialRequest;
     private UserEntity author;
     private Set<CategoryNameEnum> categories;
+    private String pictureUrl;
 
 
     public ReservationViewModel() {
@@ -100,5 +101,13 @@ public class ReservationViewModel {
     public ReservationViewModel setAuthor(UserEntity author) {
         this.author = author;
         return this;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
     }
 }

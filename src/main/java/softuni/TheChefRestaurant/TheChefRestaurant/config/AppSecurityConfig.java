@@ -12,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.UserRepository;
-import softuni.TheChefRestaurant.TheChefRestaurant.service.impl.TheChefUserDetailsService;
+import softuni.TheChefRestaurant.TheChefRestaurant.service.authentication.TheChefUserDetailsService;
 
 
 @Configuration
@@ -31,9 +31,9 @@ public class AppSecurityConfig {
                                 //Allow anyone to see the home page, register and login
                                 .requestMatchers("/", "/users/register", "/users/login", "/contact-us", "/about",
                                         "individual", "cocktail", "celebrate").permitAll()
+                                .requestMatchers("/user/profile").authenticated()
                                 //all others are authenticated
                                 .anyRequest().authenticated()
-
                 ).formLogin(
                         formLogin -> {
                             formLogin

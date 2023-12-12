@@ -39,6 +39,7 @@ public class ReservationController {
     public ReservationServiceModel reservationServiceModel() {
         return new ReservationServiceModel();
     }
+
     @GetMapping("reservations/your/{id}")
     public String your(@PathVariable Long id, Model model){
         model.addAttribute("reservation", modelMapper.map(reservationService.findYourReservationById(id), ReservationViewModel.class));
@@ -72,7 +73,7 @@ public class ReservationController {
         ReservationServiceModel reservationServiceModel = modelMapper.map(addReservationBindingModel, ReservationServiceModel.class);
         reservationService.addReservation(reservationServiceModel);
 
-        return "redirect:/";
+        return "redirect:/your-reservation";
     }
 
 
