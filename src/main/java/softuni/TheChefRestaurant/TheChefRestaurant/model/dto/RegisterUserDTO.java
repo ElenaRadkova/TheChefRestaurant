@@ -14,7 +14,7 @@ import softuni.TheChefRestaurant.TheChefRestaurant.model.validation.UniqueUserna
 )
 public record RegisterUserDTO(@NotEmpty @UniqueUsername String username,
                                   @NotEmpty String fullName,
-                                  @NotNull @Email String email ,
+                                  @NotNull @Email String email,
                                   String password,
                                   String confirmPassword) {
 

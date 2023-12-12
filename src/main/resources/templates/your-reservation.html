@@ -10,59 +10,33 @@
     <header th:replace="~{fragments/navigation}">
     </header>
 
-<!--    <main class="p-5 align-content-center bg-blur my-register-div">-->
-<!--        <div class="container mt-5">-->
-<!--            <div class="row d-flex justify-content-center">-->
-<!--                <div class="col-md-7">-->
-<!--                    <div class="reservation-info p-3 py-4">-->
-<!--                        <div class="text-center"><img src="/images/logo.jpg" width="100" class="rounded-circle"></div>-->
-<!--                        <div class="text-center mt-3">-->
-<!--                        <span th:text="${reservationViewModel.author}"-->
-<!--                              class="bg-secondary p-1 px-4 rounded text-white">, thank you for your reservation!</span>-->
-<!--                            <h5 class="mt-4 mb-0">You have reservation of name</h5>-->
-<!--                            <span th:text="${reservation.name}"></span>-->
-<!--                            <h5 class="mt-2 mb-0">For</h5>-->
-<!--                            <span th:text="${reservation.countPeople}">people</span>-->
-<!--                            <h5 class="mt-2 mb-0">You want to be in</h5>-->
-<!--                            <span th:text="${reservation.section}">area</span>-->
-<!--                            <div class="px-4 mt-5">-->
-<!--                                <p class="fonts">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim et nostrum-->
-<!--                                    optio perferendis quam quod ratione rem sit soluta ut! A dolor laborum, maiores neque-->
-<!--                                    nesciunt quis rerum sunt suscipit. </p>-->
-<!--                            </div>-->
-<!--                            <div class="buttons">-->
-<!--                                <a th:href="@{/}"-->
-<!--                                   th:text="Back"-->
-<!--                                   class="btn btn-outline-primary px-4">-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </main>-->
-
     <input type = "hidden" name="reservationId" id="reservationId" th:value="${reservation.id}">
 
     <div class = "your-main" th:object="${reservation}">
         <!--/*@thymesVar id="reservations" type=""*/-->
-        <section class="reservationEntity-info text-center">
-            <h2 th:text="'Thank you' + ${@userDetailsService.loadUserByUsername(authenticated)} + ' for your reservation,' "> </h2>
+        <section class="reservationEntity-info text-lg-left">
+            <h2 th:text="'Thank you for your reservation!' "> </h2>
             <p>You have reservation of the name:
                 <span th:text="*{name}" id="name"></span>
             </p>
-            <p>For:
-                <span th:text="*{countPeople}" id="countPeople"></span> people
+            <p>Prefer person:
+                <span th:text="*{countPeople} + ' people'" id="countPeople"></span>
             </p>
-            <p>Date and time for your reservation is:
-                <span id="dateTime"></span>
+            <p id="dateTime">Date of your reservation is:
+                <span th:text="*{dateTime.getDayOfMonth()}" ></span>
+                <span th:text="*{dateTime.getMonth()}"></span>
+                <span th:text="*{dateTime.getYear()}"></span>
             </p>
-            <p>You prefer
-                <span id="section">section</span>
+            <p id="dateTime">Prefer time:
+                <span th:text="*{dateTime.getHour()} + ':'"></span>
+                <span th:text="*{dateTime.getMinute()} + 'h  '"></span>
+                <span th:text="*{dateTime.getDayOfWeek()}"></span>
             </p>
-            <p>For
-                <span id="category">category of your reservation</span>
+            <p>Prefer area:
+                <span th:text="*{section}" id="section"></span>
+            </p>
+            <p>Your special requests are:
+                <span th:text="*{specialRequest}" id="specialRequest"></span>
             </p>
         </section>
 
@@ -104,9 +78,7 @@
     </div>
     <script th:src="@{/js/comments.js}"></script>
 </div>
-    </div>
 
-</div>
 <!-- Wrapper Ends -->
 </body>
 <footer th:replace="~{fragments/footer}">

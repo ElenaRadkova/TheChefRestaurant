@@ -74,7 +74,7 @@ VALUES
      '2023-12-01 20:00:00',
      'SALON', '2', 1);
 
-INSERT INTO reservations ( name, phone_number, special_request, date_time, section, count_people, author_id)
+INSERT INTO reservations (name, phone_number, special_request, date_time, section, count_people, author_id)
 VALUES
     ('Петър Петров',
      '+359883654123',

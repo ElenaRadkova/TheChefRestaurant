@@ -10,16 +10,51 @@
     </header>
 
     <section th:each="reservation : ${reservations}" th:object="${reservation}" class="reservation-info">
-        <img th:src="*{pictureUrl}" alt="Title image">
+        <img th:src="*{pictureUrl}" width="250px" height="250px" alt="Title image">
         <div>
-            <h2 th:text="*{author}">Your Route</h2>
-            <p th:text="*{countPeople}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae alias reiciendis deleniti possimus nemo
-                non repellendus?
-                Quae atque vero modi quidem! Autem cupiditate fugit doloribus ad amet, asperiores provident commodi.</p>
-            <a th:href="@{/reservations/your/{id}(id = *{id})}" class="btn">Learn More</a>
+            <h2 th:text="*{name}">Your Reservation</h2>
+            <p th:text="*{countPeople} + ' people'"></p>
+            <a th:href="@{/reservations/your/{id}(id = *{id})}" class="btn">Reservation details</a>
         </div>
     </section>
+<!--    <section class="comments">-->
+<!--        <h1>Comments</h1>-->
+<!--        <div>-->
+<!--            &lt;!&ndash; Comments submission &ndash;&gt;-->
+<!--            <form id="commentForm" method="POST"-->
+<!--                  th:action="@{/api/{reservationId}/comments(reservationId=${reservation.id})}">-->
+<!--                <div class="form-group">-->
+<!--                    <h4>Leave a comment</h4>-->
+<!--                    <label for="textContent">TextContent</label>-->
+<!--                    <textarea name="textContent"-->
+<!--                              id="textContent"-->
+<!--                              cols="30"-->
+<!--                              rows="5"-->
+<!--                              class="form-control"-->
+<!--                              style="background-color: white;"></textarea>-->
+<!--                    <small id="messageError" class="invalid-feedback">-->
+<!--                        Text comment should be at least 10 characters.-->
+<!--                    </small>-->
+<!--                </div>-->
+
+<!--                <div class="form-group">-->
+<!--                    <input type="submit"-->
+<!--                           class="btn"-->
+<!--                           id="postComment"-->
+<!--                           value="Post Comment"/>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--            &lt;!&ndash; Comments submission &ndash;&gt;-->
+<!--        </div>-->
+<!--        &lt;!&ndash; All comments section &ndash;&gt;-->
+<!--&lt;!&ndash;        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;            <span id="commentCtnr">&lt;!&ndash; Comments section, filled in by script &ndash;&gt;</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        &lt;!&ndash; EO: All comments section &ndash;&gt;-->
+<!--    </section>-->
+<!--    <script th:src="@{/js/comments.js}"></script>-->
 </div>
+
 </body>
 <footer th:replace="~{fragments/footer}">
 </footer>
