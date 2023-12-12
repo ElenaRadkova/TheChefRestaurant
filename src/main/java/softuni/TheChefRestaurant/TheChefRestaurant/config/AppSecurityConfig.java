@@ -31,7 +31,7 @@ public class AppSecurityConfig {
                                 //Allow anyone to see the home page, register and login
                                 .requestMatchers("/", "/users/register", "/users/login", "/contact-us", "/about",
                                         "individual", "cocktail", "celebrate").permitAll()
-                                .requestMatchers("/user/profile").authenticated()
+                                .requestMatchers("/user/profile", "/users/logout").authenticated()
                                 //all others are authenticated
                                 .anyRequest().authenticated()
                 ).formLogin(

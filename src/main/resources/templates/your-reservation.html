@@ -48,7 +48,7 @@
     <div class = "your-main" th:object="${reservation}">
         <!--/*@thymesVar id="reservations" type=""*/-->
         <section class="reservationEntity-info text-center">
-            <h2 th:text="'Thank you for your reservation,' "> </h2>
+            <h2 th:text="'Thank you' + ${@userDetailsService.loadUserByUsername(authenticated)} + ' for your reservation,' "> </h2>
             <p>You have reservation of the name:
                 <span th:text="*{name}" id="name"></span>
             </p>
@@ -105,34 +105,6 @@
     <script th:src="@{/js/comments.js}"></script>
 </div>
     </div>
-
-<!--    <section th:object="${reservationEntity}" th:action="@{/reservations/your/{id}}" class="reservationEntity-info">-->
-<!--        <img src="/images/logo.jpg" alt="Title image">-->
-<!--        <div>-->
-<!--            <h2>Your Reservation</h2>-->
-<!--&lt;!&ndash;            <p>Thank you for your reservationEntity</p>&ndash;&gt;-->
-
-<!--                <th:block th:text = "${@loggedUser.username} == null ? 'no user' : 'Thank you, '-->
-<!--                + *{name} + ' for your reservationEntity! You have confirm for table for '-->
-<!--                + *{countPeople} + ' for ' + *{dateTime}-->
-<!--                + '. Your special request is: '-->
-<!--                + *{specialRequest}"></th:block>-->
-<!--            <div class="buttons">-->
-<!--                <button th:action="@{/index}" class="btn btn-outline-primary px-4">Back</button>-->
-<!--                &lt;!&ndash;                            <button class="btn btn-primary px-4 ms-3">Contact</button>&ndash;&gt;-->
-<!--            </div>-->
-
-<!--        </div>-->
-<!--        <div class="text-center mt-3">-->
-<!--            <h5 class="mt-4 mb-0">Name of the reservationEntity:</h5>-->
-<!--            <span th:text="${@yourReservation.name}">UI/UX Designer</span>-->
-<!--            <h5 class="mt-2 mb-0">Count of people:</h5>-->
-<!--            <span th:text="${addReservationBindingModel.getCountPeople()}">UI/UX Designer</span>-->
-<!--            <h5 class="mt-2 mb-0">Date and time</h5>-->
-<!--            <span th:text="${addReservationBindingModel.dateTime}">UI/UX Designer</span>-->
-<!--            <h5 class="mt-2 mb-0">Your special request is:</h5>-->
-<!--            <span th:text="${addReservationBindingModel.specialRequest}">UI/UX Designer</span>-->
-<!--        </div>-->
 
 </div>
 <!-- Wrapper Ends -->

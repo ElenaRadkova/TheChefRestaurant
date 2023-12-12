@@ -52,7 +52,7 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public List<ReservationViewModel> findAllRoutesView() {
+    public List<ReservationViewModel> findAllReservationsView() {
         return  reservationRepository
                 .findAll()
                 .stream()

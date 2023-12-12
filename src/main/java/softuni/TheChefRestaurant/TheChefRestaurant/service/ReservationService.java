@@ -9,5 +9,5 @@ import java.util.List;
 public interface ReservationService {
     void addReservation(ReservationServiceModel reservationServiceModel);
     YourReservationViewModel findYourReservationById(Long id);
-    List<ReservationViewModel> findAllRoutesView();
+    List<ReservationViewModel> findAllReservationsView();
 }

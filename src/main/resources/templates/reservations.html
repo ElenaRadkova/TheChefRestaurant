@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head}">
+</head>
+<body>
+<div class="wrapper">
+    <!-- Navigation -->
+    <header th:replace="~{fragments/navigation}">
+    </header>
+
+    <section th:each="reservation : ${reservations}" th:object="${reservation}" class="reservation-info">
+        <img th:src="*{pictureUrl}" alt="Title image">
+        <div>
+            <h2 th:text="*{author}">Your Route</h2>
+            <p th:text="*{countPeople}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae alias reiciendis deleniti possimus nemo
+                non repellendus?
+                Quae atque vero modi quidem! Autem cupiditate fugit doloribus ad amet, asperiores provident commodi.</p>
+            <a th:href="@{/reservations/your/{id}(id = *{id})}" class="btn">Learn More</a>
+        </div>
+    </section>
+</div>
+</body>
+<footer th:replace="~{fragments/footer}">
+</footer>
+</html>
