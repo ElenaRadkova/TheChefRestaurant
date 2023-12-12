@@ -88,7 +88,7 @@ img {
 /* Showcase */
 .showcase {
     grid-area: showcase;
-    min-height: 600px;
+    min-height: 500px;
     background: url("../images/litle-home-cover.jpg");
     /*background: repeat;*/
     background-size: cover;
@@ -218,6 +218,8 @@ footer {
 }
 .comments{
     background-color: transparent !important;
+    margin-top: 10px !important;
+    padding-left: 0px;
 }
 
 /* About */
@@ -403,6 +405,9 @@ body {
     color: #fff;
     height: 40px;
     background-color: #0833e3
+}
+.form-control{
+    width: 60% !important;
 }
 
 
