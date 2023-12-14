@@ -3,7 +3,7 @@
 
 <h3>Welcome to The Chef Restaurant repository! My first Rest API project using Spring Boot</h3>
 
-<img src="C:\Users\admin\Desktop\za README file\Home page-readme.png" width="700"/>
+<img url="https://res.cloudinary.com/elenak/image/upload/v1702580310/lblpyjoqs4joczv1hyzb.png" width="700"/>
 
 <h3>Deployed to :</h3>
 
