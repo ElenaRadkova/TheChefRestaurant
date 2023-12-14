@@ -3,7 +3,7 @@
 
 <h3>Welcome to The Chef Restaurant repository! My first Rest API project using Spring Boot</h3>
 
-<img url="https://res.cloudinary.com/elenak/image/upload/v1702580310/lblpyjoqs4joczv1hyzb/.png" width="700"/>
+<img src="https://github.com/ElenaRadkova/TheChefRestaurant/blob/master/src/main/resources/static/images/readmeImages/Home%20page-readme.png" width="700"/>
 
 <h3>Deployed to :</h3>
 
@@ -83,9 +83,10 @@ https:///
 
 
 <h2 id="more-pictures"> More pictures: </h2>
-<img src="C:\Users\admin\Desktop\za README file\Register page-readme.png" width="700"/>
-<img src="C:\Users\admin\Desktop\za README file\Date errors-readme.png" width="700"/>
-<img src="C:\Users\admin\Desktop\za README file\Individual Reservation-readme.png" width="700"/>
-<img src="C:\Users\admin\Desktop\za README file\Contact page-readme.png" width="700"/>
+<img src="src/main/resources/static/images/readmeImages/Register page-readme.png" width="700"/>
+<img src="https://github.com/ElenaRadkova/TheChefRestaurant/blob/master/src/main/resources/static/images/readmeImages/Date%20errors-readme.png" width="700"/>
+<img src="https://github.com/ElenaRadkova/TheChefRestaurant/blob/master/src/main/resources/static/images/readmeImages/Individual%20Reservation-readme.png" width="700"/>
+<img src="https://github.com/ElenaRadkova/TheChefRestaurant/blob/master/src/main/resources/static/images/readmeImages/Reservation%20details.png" width="700"/>
+<img src="https://github.com/ElenaRadkova/TheChefRestaurant/blob/master/src/main/resources/static/images/readmeImages/Contact%20page-readme.png" width="700"/>
 
 
