@@ -53,7 +53,7 @@ https:///
   <li>Configure environment variables by updating the application.yml file.</li>
   <li>Build and run the project using Maven.</li>
   <li>There is a data.sql in the main folder. Run it to populate your database with some sample data.</li>
-  <li>Access the web application by visiting http://localhost:3000 in your web browser.</li>
+  <li>Access the web application by visiting http://localhost:8080 in your web browser.</li>
   <li>Create user accounts manage restaurant files and enjoy The Chef Restaurant.</li>
 </ol>
 
