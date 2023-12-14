@@ -5,6 +5,7 @@ import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.CategoryNa
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.SectionNameEnum;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 public class ReservationServiceModel {
@@ -26,69 +27,78 @@ public class ReservationServiceModel {
         return id;
     }
 
-    public void setId(Long id) {
+    public ReservationServiceModel setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public ReservationServiceModel setName(String name) {
         this.name = name;
+        return this;
     }
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
-    public void setPhoneNumber(String phoneNumber) {
+    public ReservationServiceModel setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        return this;
     }
 
     public SectionNameEnum getSection() {
         return section;
     }
 
-    public void setSection(SectionNameEnum section) {
+    public ReservationServiceModel setSection(SectionNameEnum section) {
         this.section = section;
+        return this;
     }
 
     public UserEntity getAuthor() {
         return author;
     }
 
-    public void setAuthor(UserEntity author) {
+    public ReservationServiceModel setAuthor(UserEntity author) {
         this.author = author;
+        return this;
     }
 
     public LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public ReservationServiceModel setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
+        return this;
     }
 
     public Integer getCountPeople() {
         return countPeople;
     }
 
-    public void setCountPeople(Integer countPeople) {
+    public ReservationServiceModel setCountPeople(Integer countPeople) {
         this.countPeople = countPeople;
+        return this;
     }
 
     public String getSpecialRequest() {
         return specialRequest;
     }
 
-    public void setSpecialRequest(String specialRequest) {
+    public ReservationServiceModel setSpecialRequest(String specialRequest) {
         this.specialRequest = specialRequest;
+        return this;
     }
 
     public Set<CategoryNameEnum> getCategories() {
         return categories;
     }
-    public void setCategories(Set<CategoryNameEnum> categories) {
+    public ReservationServiceModel setCategories(Set<CategoryNameEnum> categories) {
         this.categories = categories;
+        return this;
     }
 }

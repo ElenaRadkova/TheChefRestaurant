@@ -20,7 +20,7 @@ function asComment(c) {
     return commentHtml
 }
 
-fetch(`http:/localhost:8080/api/${reservationId}/comments`)
+fetch(`http://localhost:8080/api/${reservationId}/comments`)
     .then(response=> response.json())
     .then(data =>{
         for(let comment of data) {

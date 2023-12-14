@@ -2,6 +2,7 @@ package softuni.TheChefRestaurant.TheChefRestaurant.model.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import org.springframework.format.annotation.DateTimeFormat;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.SectionNameEnum;
 
 import java.time.LocalDateTime;
@@ -18,22 +19,14 @@ public class ReservationEntity extends BaseEntity{
     private LocalDateTime dateTime;
     private Integer countPeople;
     private String specialRequest;
-    private Set<CategoryEntity> categories;
-    private Set<PictureEntity> pictures;
+    private List<CategoryEntity> categories;
+    private List<PictureEntity> pictures;
     private List<CommentEntity> comments;
 
 
 
 
     public ReservationEntity() {
-    }
-    @OneToMany(mappedBy = "reservation", fetch = FetchType.EAGER)
-    public List<CommentEntity> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<CommentEntity> comments) {
-        this.comments = comments;
     }
 
     @Column(nullable = false)
@@ -93,19 +86,29 @@ public class ReservationEntity extends BaseEntity{
         this.specialRequest = specialRequest;
     }
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    public Set<CategoryEntity> getCategories() {
+    @ManyToMany(fetch = FetchType.LAZY)
+    public List<CategoryEntity> getCategories() {
         return categories;
     }
-    public void setCategories(Set<CategoryEntity> categories) {
+    public ReservationEntity setCategories(List<CategoryEntity> categories) {
         this.categories = categories;
+        return this;
     }
 
-    @OneToMany(mappedBy = "reservation", fetch = FetchType.EAGER)
-    public Set<PictureEntity> getPictures() {
+    @OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
+    public List<PictureEntity> getPictures() {
         return pictures;
     }
-    public void setPictures(Set<PictureEntity> pictures) {
+    public void setPictures(List<PictureEntity> pictures) {
         this.pictures = pictures;
+    }
+
+    @OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
+    public List<CommentEntity> getComments() {
+        return comments;
+    }
+    public ReservationEntity setComments(List<CommentEntity> comments) {
+        this.comments = comments;
+        return this;
     }
 }

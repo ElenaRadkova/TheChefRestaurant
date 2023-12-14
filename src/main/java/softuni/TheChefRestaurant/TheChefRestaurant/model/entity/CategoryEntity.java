@@ -16,15 +16,17 @@ public class CategoryEntity extends BaseEntity{
         return name;
     }
 
-    public void setName(CategoryNameEnum name) {
+    public CategoryEntity setName(CategoryNameEnum name) {
         this.name = name;
+        return this;
     }
 
     @Column(columnDefinition = "LONGTEXT")
     public String getDescription() {
         return description;
     }
-    public void setDescription(String description) {
+    public CategoryEntity setDescription(String description) {
         this.description = description;
+        return this;
     }
 }

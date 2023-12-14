@@ -9,6 +9,7 @@ import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.CategoryEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.SectionNameEnum;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 public class AddReservationBindingModel {
@@ -49,7 +50,7 @@ public class AddReservationBindingModel {
         this.section = section;
     }
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
+    @DateTimeFormat(pattern = "yyyy-MM-dd' 'HH:mm")
     @FutureOrPresent
     public LocalDateTime getDateTime() {
         return dateTime;

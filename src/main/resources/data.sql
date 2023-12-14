@@ -46,7 +46,7 @@ VALUES
     ('Иван Иванов',
      '+359887005887',
      'Бихме искали масата да бъде далеч от музиката и в близост до бара.',
-     '2023-12-09 19:30:00',
+     '2023-12-09 19:30',
      'SALON', '3', 1);
 
 
@@ -55,7 +55,7 @@ VALUES
     ('Гергана Иванова',
      '+359886123123',
      'Бихме желали, масите да бъдат тип щъркели за правостоящи, без жива музика. Храната да бъде на хапки, вода, безалкохолно, вино. Допълнително ще се поръчва на място.',
-     '2023-12-22 18:00:00',
+     '2023-12-22 18:00',
      'TERRACE', '35', 2);
 
 INSERT INTO reservations ( name, phone_number, special_request, date_time, section, count_people, author_id)
@@ -63,7 +63,7 @@ VALUES
     ('Gabriela Jonson',
      '+40100213546',
      'I would like to celebrate my birthday and have a birthday cake',
-     '2023-12-05 19:00:00',
+     '2023-12-05 19:00',
      'VIP_ZONE', '15', 1);
 
 INSERT INTO reservations ( name, phone_number, special_request, date_time, section, count_people, author_id)
@@ -71,7 +71,7 @@ VALUES
     ('Ваня Маринова',
      '+359885321123',
      'Желаем романтична вечеря в по-уединена маса',
-     '2023-12-01 20:00:00',
+     '2023-12-01 20:00',
      'SALON', '2', 1);
 
 INSERT INTO reservations (name, phone_number, special_request, date_time, section, count_people, author_id)
@@ -79,13 +79,13 @@ VALUES
     ('Петър Петров',
      '+359883654123',
      'Бихме искали да отпразнуваме кръщенето на сина ни. Бихме искали да има жива музика и място за танци',
-     '2023-12-01 14:30:00',
+     '2023-12-01 14:30',
      'SALON', '50', 1);
 
 INSERT INTO comments (`approved`, `created`, `text_content`, `author_id`, `reservation_id`)
 VALUES
-    (1, '2021-11-14 08:10:40', 'Perfect dinner!', 1, 1),
-    (0, '2021-11-14 08:10:40', 'Excellent food', 1, 1);
+    (1, '2023-11-14 08:10', 'Perfect dinner!', 1, 1),
+    (0, '2023-11-14 08:10', 'Excellent food', 2, 1);
 
 
 INSERT INTO reservations_categories VALUES (1,1);

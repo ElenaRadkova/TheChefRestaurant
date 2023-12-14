@@ -107,7 +107,8 @@ public class ReservationViewModel {
         return pictureUrl;
     }
 
-    public void setPictureUrl(String pictureUrl) {
+    public ReservationViewModel setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
+        return this;
     }
 }

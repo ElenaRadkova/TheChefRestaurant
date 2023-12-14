@@ -48,8 +48,14 @@
                 </div>
                 <div class="d-flex justify-content-center mt-2">
                     <button class="btn btn-primary btn-block w-50" type="submit">Login</button>
+                </div><br>
+                <div th:action="@{/users/register}"
+                     th:method="post"
+                     class="d-flex justify-content-center mt-2">
+                    <button  class="btn btn-outline-primary px-4 w-100" type="submit" >You are not register?</button>
                 </div>
             </form>
+
         </div>
     </div>
 </main>

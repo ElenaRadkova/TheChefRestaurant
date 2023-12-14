@@ -1,9 +1,11 @@
 package softuni.TheChefRestaurant.TheChefRestaurant.service.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import softuni.TheChefRestaurant.TheChefRestaurant.exeptions.ObjectNotFoundException;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.dto.view.CommentViewModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.CommentEntity;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.service.CommentServiceModel;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.ReservationRepository;
 import softuni.TheChefRestaurant.TheChefRestaurant.service.CommentService;
 
@@ -19,6 +21,13 @@ public class CommentServiceImpl implements CommentService {
         this.reservationRepository = reservationRepository;
     }
 
+    @Override
+    public CommentViewModel createNewComment(CommentServiceModel commentServiceModel) {
+        //TODO
+        throw new UnsupportedOperationException("NOT YET!");
+    }
+
+    @Transactional
     @Override
     public List<CommentViewModel> getComments(Long reservationId) {
 

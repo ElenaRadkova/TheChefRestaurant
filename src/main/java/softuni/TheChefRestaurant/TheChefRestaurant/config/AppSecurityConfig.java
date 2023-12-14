@@ -22,7 +22,7 @@ public class AppSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-         httpSecurity.
+        return httpSecurity.
                 authorizeHttpRequests(
                         //Define which urls are visible by which users
                         authorizeRequest -> authorizeRequest
@@ -31,7 +31,7 @@ public class AppSecurityConfig {
                                 //Allow anyone to see the home page, register and login
                                 .requestMatchers("/", "/users/register", "/users/login", "/contact-us", "/about",
                                         "individual", "cocktail", "celebrate").permitAll()
-                                .requestMatchers("/reservations/**").permitAll()
+                                .requestMatchers("/reservations/**", "/api/**").permitAll()
                                 .requestMatchers("/user/profile", "/users/logout").authenticated()
                                 //all others are authenticated
                                 .anyRequest().authenticated()
@@ -53,10 +53,8 @@ public class AppSecurityConfig {
                                     .logoutSuccessUrl("/")
                                     .invalidateHttpSession(true);
                         }
-                );
+                ).build();
         //TODO remember me!
-
-          return httpSecurity.build();
     }
 
   @Bean
