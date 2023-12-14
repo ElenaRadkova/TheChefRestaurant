@@ -83,16 +83,9 @@ https:///
 
 
 <h2 id="more-pictures"> More pictures: </h2>
-<img src="/github_images/dogs_admin.png" style="width: 700px"/>
-<img src="/github_images/pedigree.png" style="width: 700px"/>
-<img src="/github_images/details.png" style="width: 700px"/>
-<img src="/github_images/edit.png" style="width: 700px"/>
-<img src="/github_images/delete.png" style="width: 700px"/>
-<img src="/github_images/delete_parent.png" style="width: 700px"/>
-<img src="/github_images/register.png" style="width: 700px"/>
-<img src="/github_images/add_parent.png" style="width: 700px"/>
-<img src="/github_images/events.png" style="width: 700px"/>
-<img src="/github_images/links.png" style="width: 700px"/>
-<img src="/github_images/regulations.png" style="width: 700px"/>
-<img src="/github_images/contacts.png" style="width: 700px"/>
+<img src="C:\Users\admin\Desktop\za README file\Register page-readme.png" width="700"/>
+<img src="C:\Users\admin\Desktop\za README file\Date errors-readme.png" width="700"/>
+<img src="C:\Users\admin\Desktop\za README file\Individual Reservation-readme.png" width="700"/>
+<img src="C:\Users\admin\Desktop\za README file\Contact page-readme.png" width="700"/>
+
 
