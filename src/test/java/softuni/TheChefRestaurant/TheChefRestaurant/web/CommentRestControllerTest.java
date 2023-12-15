@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
+import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.ReservationEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.UserEntity;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.CommentRepository;
 import softuni.TheChefRestaurant.TheChefRestaurant.repository.ReservationRepository;
@@ -45,5 +46,13 @@ public class CommentRestControllerTest {
     @Test
     void testGetComments() {
 
+    }
+    private void initReservation() {
+        ReservationEntity testReservation = new ReservationEntity();
+        testReservation.setName("Test Reservation");
+        testReservation.setPhoneNumber("359885111222");
+        testReservation.setSpecialRequest("Test Request");
+
+        reservationRepository.save(testReservation);
     }
 }
