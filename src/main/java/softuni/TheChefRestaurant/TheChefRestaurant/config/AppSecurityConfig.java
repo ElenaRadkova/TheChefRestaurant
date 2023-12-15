@@ -32,7 +32,7 @@ public class AppSecurityConfig {
                                 .requestMatchers("/", "/users/register", "/users/login", "/contact-us", "/about",
                                         "individual", "cocktail", "celebrate").permitAll()
                                 .requestMatchers("/reservations/**", "/api/**").permitAll()
-                                .requestMatchers("/user/profile", "/users/logout").authenticated()
+                                .requestMatchers("/user/profile", "/users/logout", "/reservations/add").authenticated()
                                 //all others are authenticated
                                 .anyRequest().authenticated()
                 ).formLogin(

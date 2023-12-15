@@ -11,9 +11,7 @@ public class UserEntity extends BaseEntity{
     private String password;
     private String fullName;
     private String email;
-//    private String phoneNumber;
     private Set<RoleEntity> roleEntities;
-
 
     public UserEntity() {
     }
@@ -54,13 +52,6 @@ public class UserEntity extends BaseEntity{
         this.email = email;
         return this;
     }
-//    @Column(nullable = false, unique = true, columnDefinition = "TEXT")
-//    public String getPhoneNumber() {
-//        return phoneNumber;
-//    }
-//    public void setPhoneNumber(String phoneNumber) {
-//        this.phoneNumber = phoneNumber;
-//    }
 
     @ManyToMany(fetch = FetchType.EAGER)
     public Set<RoleEntity> getRoles() {

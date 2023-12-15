@@ -9,8 +9,6 @@ import softuni.TheChefRestaurant.TheChefRestaurant.model.entity.enums.RoleNameEn
 @Entity
 @Table(name="roles")
 public class RoleEntity extends BaseEntity {
-    public RoleEntity() {
-    }
     private RoleNameEnum role;
 
 
@@ -20,7 +18,8 @@ public class RoleEntity extends BaseEntity {
         return role;
     }
 
-    public void setRole(RoleNameEnum role) {
+    public RoleEntity setRole(RoleNameEnum role) {
         this.role = role;
+        return this;
     }
 }

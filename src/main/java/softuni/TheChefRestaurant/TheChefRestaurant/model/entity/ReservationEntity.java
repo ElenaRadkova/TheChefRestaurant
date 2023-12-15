@@ -103,7 +103,7 @@ public class ReservationEntity extends BaseEntity{
         this.pictures = pictures;
     }
 
-    @OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<CommentEntity> getComments() {
         return comments;
     }
